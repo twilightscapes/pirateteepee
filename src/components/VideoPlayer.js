@@ -64,12 +64,12 @@ const Video = () => {
 
   const inputElement = useRef(null);
 
-  useEffect(() => {
-    inputElement.current.onfocus = () => {
-      // window.scrollBy(0, 0);
-      document.body.scrollTop = 0;
-    };
-  });
+  // useEffect(() => {
+  //   inputElement.current.onfocus = () => {
+  //     window.scrollBy(0, 0);
+  //     document.body.scrollTop = 0;
+  //   };
+  // });
 
 
 
