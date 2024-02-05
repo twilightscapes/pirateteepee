@@ -5,7 +5,7 @@
 .animated{-webkit-animation-duration:1ms;-webkit-animation-iteration-count:1;-webkit-transition-duration:1ms;animation-duration:1ms;animation-iteration-count:1;transition-duration:1ms}
 *{animation-duration:.01ms;animation-iteration-count:1;scroll-behavior:auto;transition-duration:.01ms}
 }
-html{min-height:100vh; background:var(--theme-ui-colors-siteBackground); z-index: -1;}
+html{min-height:100dvh; overflow-y:hidden; background:var(--theme-ui-colors-siteBackground); z-index: -1;}
 
 body{z-index: 0; background:var(--theme-ui-colors-siteBackground);overscroll-behavior:none;}
 
