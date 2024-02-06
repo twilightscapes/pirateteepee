@@ -14,10 +14,11 @@ const NotFound = () => (
 
 
 
-<div style={{display:'grid', placeContent:'center', height:'100%', position:'absolute', top:'-15vh', }}>
-<StaticImage className="panel" src="../img/moose.webp" alt="Todd builds Web Apps" style={{  border:'0px solid red !important'}}  />
+<div style={{display:'grid', placeContent:'center', width:'100vw', height:'90vh', position:'relative', top:'', }}>
 
-<Link to="/" className="button" style={{maxWidth:'300px', margin:'0 auto'}}>
+<StaticImage className="panel" src="../img/moose.webp" alt="Todd builds Web Apps" style={{ position:'relative', width:'100%', left:'0', right:'0', margin:'0 auto', marginTop: '-20vh', objectFit: 'contain'}}  />
+
+<Link to="/" className="button" style={{maxWidth:'300px', margin:'20px auto'}}>
         <RiArrowLeftSLine className="icon -left" />
         Back to Homepage
       </Link>
