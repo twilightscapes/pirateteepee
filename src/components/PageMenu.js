@@ -45,14 +45,14 @@ const MenuComponent = () => {
     position:'absolute', right:'2px', bottom:'55vh',
     width: '60px',
     height:'60px',
-    zIndex: '3',
+    zIndex: '2',
     opacity: '.5',
     color:'',
     display:'flex'
  // Adjust the borderRadius values as needed
   }}
 >
-  <MenuIcon style={{height:'100%', maxHeight: '60px', zIndex:'3', color:'#fff' }} />
+  <MenuIcon style={{height:'100%', maxHeight: '60px', zIndex:'2', color:'#fff' }} />
 </button>
 
 <div className="menusnapp" style={{position:'absolute', zIndex:'2', top:'0', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
@@ -71,7 +71,7 @@ const MenuComponent = () => {
         <br /><br />
         And it's completely FREE!
         <br />
-        <Link to="/contact" state={{ modal: true }} className="button print" style={{ display: 'flex', justifyContent: 'center', padding: '1vh .5vw', maxWidth: '250px', margin: '30px auto' }}>Become a PIRATE!</Link>
+        <Link to="/install" state={{ modal: true }} className="button print" style={{ display: 'flex', justifyContent: 'center', padding: '1vh .5vw', maxWidth: '250px', margin: '30px auto' }}>Become a PIRATE!</Link>
       </div>
     </div>
     <div className="flexcheek mob2 print" style={{ position: '', top: '', minWidth: '25vw', overflow: '', marginBottom: '', paddingTop: '', borderRadius: 'var(--theme-ui-colors-borderRadius)', }}>
