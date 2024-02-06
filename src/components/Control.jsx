@@ -80,7 +80,7 @@ const Control = ({
   onVolumeChangeHandler,
   onVolumeSeekUp,
   volume,
-  mute,
+  muted,
   onMute,
   duration,
   currentTime,
@@ -138,7 +138,7 @@ const Control = ({
             </div>
 
             <div className="icon__btn" onClick={onMute}>
-            {mute ? (
+            {muted ? (
                   <VolumeOff fontSize="medium" />
                 ) : (
                   <VolumeUp fontSize="medium" />

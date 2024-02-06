@@ -1,3 +1,3 @@
 {
-  "userStyles": "#menu li a{border-bottom:none;} .backimage{max-height: 100vh; margin-top: 0; background-size: center; background-position: center; object-fit: contain !important; opacity:.6;} "
+  "userStyles": "#menu li a{border-bottom:none;} .backimage{max-height: 70vh; margin-top: 60px; background-size: center; background-position: center; object-fit: contain !important; opacity:.6;} "
 }

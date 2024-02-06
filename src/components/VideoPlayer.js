@@ -359,34 +359,9 @@ const Video = () => {
   /> */}
 
       <div className='player-wrapper' style={{marginTop:''}}>
-      <div
-          className="pagemenu panel"
-          style={{
-            position: "absolute",
-            top: "60px",
-            zIndex: "2",
-            left: "0",
-            right: "",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "auto",
-            maxWidth: "98vw",
-            maxHeight:'80dvh',
-            margin: "0 auto",
-            gap: "2vw",
-            background: "rgba(0, 0, 0, .5)",
-            padding: "",
-            // border: "1px solid #666",
-            borderRadius: "var(--theme-ui-colors-borderRadius)",
-            textShadow: "0 1px 1px rgba(0, 0, 0, .7)",
-            // fontSize: "clamp(2rem, 3vw, 3rem)",
-            verticalAlign: "center",
-            color:'#fff'
-          }}
-        >
+
 <PageMenu />
-        </div>
+  
 
         {/* <Player /> */}
           <ReactPlayer

@@ -66,7 +66,9 @@ export default function Seo({
       />
       <meta name="description" content={seo.description} />
       <meta content={themeColor} name="theme-color" />
-      {/* <meta http-equiv="Content-Security-Policy" content={`connect-src 'self' https://www.youtube.com ${seo.url}; clipboard-read 'self'`} /> */}
+      {/* <meta http-equiv="Content-Security-Policy" content={`font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.youtube.com ${seo.url}`} /> */}
+
+      <meta http-equiv="Content-Security-Policy" content={`default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src 'self' * data:; media-src 'self' *; font-src 'self' *; connect-src 'self' *; object-src 'self' *; frame-src 'self' *;`}/>
 
 
 
