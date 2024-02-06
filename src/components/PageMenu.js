@@ -58,7 +58,7 @@ const MenuComponent = () => {
 <div className="menusnapp" style={{position:'absolute', zIndex:'2', top:'0', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
   
   <div id="" className="flexbutt" style={{ display: '', gap: '3vh', justifyContent: 'center', alignItems: "center", margin: '0 0', padding: '0', position: 'relative', minWidth:'80vw' }}>
-    <div style={{ minWidth: '25vw', maxHeight: '20vh', textAlign: 'center', alignItems: "", }}>
+    <div style={{ minWidth: '25vw', maxHeight: '20vh', textAlign: 'center', color: "#fff", }}>
       <PirateLogo style={{ minWidth: '', maxHeight: '20vh', position:'', top:'', left:'' }} />
       the web revolution
     </div>
