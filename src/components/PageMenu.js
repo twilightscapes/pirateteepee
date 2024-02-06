@@ -42,7 +42,7 @@ const MenuComponent = () => {
     cursor: "pointer",
     padding: "0",
     fontSize: 'clamp(3rem, 3vw, 3rem)',
-    position:'absolute', right:'2px', top:'35vh',
+    position:'absolute', right:'2px', bottom:'55vh',
     width: '60px',
     height:'60px',
     zIndex: '3',

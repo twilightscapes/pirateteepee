@@ -357,9 +357,10 @@ const Video = () => {
     description="Adfree Video Player"
   />
 
+
+<PageMenu/>
+
       <div className='player-wrapper' style={{marginTop:''}}>
-
-
 
 
         {/* <Player /> */}
@@ -411,10 +412,9 @@ zindex:'1'
           
           />
       </div>
-            <PageMenu style={{position:''}} />
+
 
       <div className="form-container controller" style={{position:'relative', zindex:'10', marginTop:'0', height:'', padding:'2vh 2%', width:'100vw', background:'var(--theme-ui-colors-headerColor)'}}>
-
           <div style={{ maxWidth:'800px', margin:'0 auto'}}>
           <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
       

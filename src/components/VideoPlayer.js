@@ -24,7 +24,7 @@ import { MdVolumeUp } from "react-icons/md"
 
 // import { IoArrowRedoSharp, IoArrowUndoSharp } from "react-icons/io5"
 
-const Video = () => {
+const VideoPlayer = () => {
 
 
   // const { language } = useSiteMetadata();
@@ -66,8 +66,8 @@ const Video = () => {
 
   useEffect(() => {
     inputElement.current.onfocus = () => {
-      window.scrollBy(0, -1000);
-      // document.body.scrollTop = 0;
+      window.scrollBy(0, 0);
+      document.body.scrollTop = 0;
     };
   });
 
@@ -84,7 +84,7 @@ const Video = () => {
   const YouTubeMute = false
   const YouTubeControls = true
   const YouTubeAutostart = true
-  const CustomControls = false
+  const CustomControls = true
   const YoutubeLoop = false
   // const Suggestion2 = frontmatter.youtube.youtubersuggestion2
   // const Suggestion3 = frontmatter.youtube.youtubersuggestion3
@@ -236,7 +236,6 @@ const Video = () => {
         
         
         </div>
-        
         </div>
 
    )}
@@ -245,77 +244,77 @@ const Video = () => {
    
     
     
-<div ref={ref} className="controlsbox" style={{width:'', height:'', border:'0px solid blue', }}>
-    
-    <button
-            aria-label="Video Play/Pause Button"
-            onClick={onPlayPause}
-            className="videohide 679 pane3" 
-            style={{
-             color:'#ddd',
-             width:'99vw', 
-             height:'auto',
-             display:'block',
-             placeContent:'',
-             aspectRatio:'16/9',
-             bottom:'0',
-             left:'0',
-             right:'0',
-             border:'0px solid yellow',
-             zindex:'1', 
-             cursor:'pointer',
-             position:'relative'
-            //  animation: 'fadeout 4s forwards'
-            }}
-          ></button>
+          
     
     
-      <div className="vidcontrols">
-                      <button
-                        onClick={onPlayPause}
-                        className="controls panel" 
-                        style={{
-                          backgroundColor:'rgba(0,0,0, 0.6)',
-                          color:'#999',
-                          borderRadius:'', overFlow:'hidden'
-                      }}
-                      >
-                        {/* <MdPlayArrow style={{fontSize:'50px', position:'absolute'}}  /> */}
-                        {playing ? (
-                          
-                          <MdPause className="hudicon" style={{}} />
-                          
-                        ) : (
-                    
-                    <MdPlayArrow className="hudicon" style={{}}  />
-                    
-                        )}
-                      </button>
-      
-                      <button
-                        // onClick={() => setState({ ...state, muted: !state.muted })}
-                        onClick={onMute}
-                        className="controls panel"
-                        style={{
-                          backgroundColor:'rgba(0,0,0, 0.6)',
-                          color:'#999',
-                          borderRadius:'', overFlow:'hidden'
-                      }}
-                      >
-                        {muted ? (
-                          <MdVolumeOff className="hudicon" fontSize="" style={{}}  />
-                        ) : volume > 0.5 ? (
-                          <MdVolumeUp className="hudicon" fontSize="" style={{}}  />
-                        ) : (
-                          <MdVolumeUp className="hudicon" fontSize="" style={{}}  />
-                        )}
-                      </button>
-      </div>
+    <div ref={ref} className="controlsbox" style={{width:'', height:'', border:'0px solid blue', }}>
     
-            </div>
+  <button
+          aria-label="Video Play/Pause Button"
+          onClick={onPlayPause}
+          className="videohide 679 pane3" 
+          style={{
+           color:'#ddd',
+           width:'99vw', 
+           height:'auto',
+           display:'block',
+           placeContent:'',
+           aspectRatio:'16/9',
+           bottom:'0',
+           left:'0',
+           right:'0',
+           border:'0px solid yellow',
+           zindex:'1', 
+           cursor:'pointer',
+           position:'absolute'
+          //  animation: 'fadeout 4s forwards'
+          }}
+        ></button>
+  
+  
+    <div className="vidcontrols">
+                    <button
+                      onClick={onPlayPause}
+                      className="controls panel" 
+                      style={{
+                        backgroundColor:'rgba(0,0,0, 0.6)',
+                        color:'#999',
+                        borderRadius:'', overFlow:'hidden'
+                    }}
+                    >
+                      {/* <MdPlayArrow style={{fontSize:'50px', position:'absolute'}}  /> */}
+                      {playing ? (
+                        
+                        <MdPause className="hudicon" style={{}} />
+                        
+                      ) : (
+                  
+                  <MdPlayArrow className="hudicon" style={{}}  />
+                  
+                      )}
+                    </button>
     
-    
-
+                    <button
+                      // onClick={() => setState({ ...state, muted: !state.muted })}
+                      onClick={onMute}
+                      className="controls panel"
+                      style={{
+                        backgroundColor:'rgba(0,0,0, 0.6)',
+                        color:'#999',
+                        borderRadius:'', overFlow:'hidden'
+                    }}
+                    >
+                      {muted ? (
+                        <MdVolumeOff className="hudicon" fontSize="" style={{}}  />
+                      ) : volume > 0.5 ? (
+                        <MdVolumeUp className="hudicon" fontSize="" style={{}}  />
+                      ) : (
+                        <MdVolumeUp className="hudicon" fontSize="" style={{}}  />
+                      )}
+                    </button>
+    </div>
+  
+          </div>
           </div>
         );
       }
@@ -357,10 +356,10 @@ const Video = () => {
     title="AdFree Video Player"
     description="Adfree Video Player"
   /> */}
-
+<PageMenu />
       <div className='player-wrapper' style={{marginTop:''}}>
 
-<PageMenu />
+
   
 
         {/* <Player /> */}
@@ -473,4 +472,4 @@ zindex:'1'
   );
 };
 
-export default Video;
+export default VideoPlayer;
