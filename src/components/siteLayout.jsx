@@ -71,9 +71,9 @@ const Layout = ({ children }) => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link id="yyy" rel="stylesheet" href={fontUrl} crossOrigin="anonymous" referrerPolicy="no-referrer-when-downgrade" />
         
-
+        {/* .ReactModal__Content{opacity:.99} */}
         <style>{`
-        
+    
           ${userStyles.userStyles}
         `}</style>
       </Helmet>

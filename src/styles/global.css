@@ -1250,13 +1250,13 @@ body.blogpost .featured-image1{border:0 solid red;max-height:70vh !important;max
 
   /* body:has(.ReactModal__Content) .magicisland{display: none !important;} */
 
-body:has(.ReactModal__Content) {overflow-x:hidden !important; overflow-y:hidden !important;}
+body:has(.ReactModal__Content) {overflow-x:hidden !important; overflow-y:hidden !important; position:fixed !important;}
   
   .ReactModalPortal {margin:0; width:100; z-index: 2; position:absolute; top:0;}
   
   .ReactModal__Overlay{background-color:transparent !important;   background: rgba(0,0,0,0.90); backdrop-filter: blur(22px);}
   
-  .ReactModal__Content{padding:0 !important; background:var(--theme-ui-colors-siteBackground) !important; margin:0 auto ; overflow: auto !important; box-shadow: none !important; border:0px solid !important; opacity:.99; inset:0 !important; width:100vw !important; padding-top:0 !important;}
+  .ReactModal__Content{padding:0 !important; background:var(--theme-ui-colors-siteBackground) !important; margin:0 auto ; overflow: auto !important; box-shadow: none !important; border:0px solid !important; opacity:1; inset:0 !important; width:100vw !important; padding-top:0 !important;}
   
   
 
