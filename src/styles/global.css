@@ -1256,7 +1256,7 @@ body:has(.ReactModal__Content) {overflow-x:hidden !important; overflow-y:hidden 
   
   .ReactModal__Overlay{background-color:transparent !important;   background: rgba(0,0,0,0.90); backdrop-filter: blur(22px);}
   
-  .ReactModal__Content{padding:0 !important; background:var(--theme-ui-colors-siteBackground) !important; margin:0 auto ; overflow: auto !important; box-shadow: none !important; border:0px solid !important; opacity:1; inset:0 !important; width:100vw !important; padding-top:0 !important;}
+  .ReactModal__Content{padding:0 !important; background:var(--theme-ui-colors-siteBackground) !important; margin:0 auto ; overflow: auto !important; box-shadow: none !important; border:0px solid !important; inset:0 !important; width:100vw !important; padding-top:0 !important;}
   
   
 
@@ -1683,7 +1683,7 @@ body:has(.ReactModal__Content) .upbar{ transform:translateY(0);}
     scroll-snap-align:center;
     scroll-snap-stop: start;
     scroll-padding: 0; 
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     max-width: 100dvw;
   }
 
