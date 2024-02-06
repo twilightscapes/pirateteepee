@@ -452,7 +452,7 @@ zindex:'1'
       </div>
 
 
-      {CustomControls ? (
+      {/* {CustomControls ? (
          <Controls
          ref={controlsRef}
          onPlayPause={handlePlayPause}
@@ -464,7 +464,7 @@ zindex:'1'
        
           ) : (
    ""
-          )}
+          )} */}
 
       </Layout>
     </>

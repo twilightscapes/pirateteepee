@@ -631,8 +631,8 @@ style={{height:'auto', width:'100dvw', maxHeight:'100dvh', position:'absolute', 
   )}
 
 {showVideoPlayer ? (
-  <section id="VideoPlayer" name="VideoPlayer" className="print scroll-area" style={{  width:'100vw', minHeight:'100dvh', margin:'0 auto 0 auto', padding:'0 0 0 0', position:'relative',
- alignContent:'center', maxWidth:'100vw', overFlowY:'hidden', display:'flex', textAlign:'left', justifyContent:'start', verticalAlign:'center',
+  <section id="VideoPlayer" name="VideoPlayer" className="print scroll-area" style={{  width:'100vw', height:'100dvh', maxHeight:'calc(75dvh + 300px)', margin:'0 auto 0 auto', padding:'0 0 0 0', position:'relative',
+ alignContent:'center', maxWidth:'100vw', display:'flex', textAlign:'left', justifyContent:'start', verticalAlign:'center',
   color:'',
   fontSize:'clamp(1rem, 1.8vw, 3.2rem)',
   textShadow:'0 2px 7px #000',
