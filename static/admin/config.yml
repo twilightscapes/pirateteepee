@@ -503,7 +503,7 @@ collections:
                 widget: "object"
                 collapsed: true
                 fields:
-                    - widget: boolean
+                  - widget: boolean
                     name: showVideoPlayer
                     label: Show Pirate Video on home page
                     required: false
