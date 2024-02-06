@@ -84,7 +84,7 @@ const VideoPlayer = () => {
   const YouTubeMute = false
   const YouTubeControls = true
   const YouTubeAutostart = true
-  const CustomControls = true
+  // const CustomControls = true
   const YoutubeLoop = false
   // const Suggestion2 = frontmatter.youtube.youtubersuggestion2
   // const Suggestion3 = frontmatter.youtube.youtubersuggestion3
@@ -103,7 +103,7 @@ const VideoPlayer = () => {
   // const [anchorEl, setAnchorEl] = React.useState(null);
 
     // const Playing  = useState(true);
-    const [state, setState] = useState({
+    const [state] = useState({
       playing: YouTubeAutostart,
       controls: YouTubeControls,
       light: ClickToPlay,
@@ -112,7 +112,7 @@ const VideoPlayer = () => {
     });
   
     const playerRef = useRef(null);
-    const controlsRef = useRef(null);
+    // const controlsRef = useRef(null);
   
     const {
       playing,
@@ -120,16 +120,16 @@ const VideoPlayer = () => {
       light,
       muted,
       loop,
-      played,
+      // played,
     } = state;
   
-    const handlePlayPause = () => {
-      setState({ ...state, playing: !state.playing });
-    };
+    // const handlePlayPause = () => {
+    //   setState({ ...state, playing: !state.playing });
+    // };
   
-    const handleMute = () => {
-      setState({ ...state, muted: !state.muted });
-    };
+    // const handleMute = () => {
+    //   setState({ ...state, muted: !state.muted });
+    // };
   
   
   

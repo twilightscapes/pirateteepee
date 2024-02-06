@@ -34,6 +34,7 @@ const MenuComponent = () => {
     <>
 
 
+
 <button
  className="flag"
   onClick={handleButtonClick}
@@ -42,7 +43,7 @@ const MenuComponent = () => {
     cursor: "pointer",
     padding: "0",
     fontSize: 'clamp(3rem, 3vw, 3rem)',
-    position:'absolute', right:'2px', bottom:'55vh',
+    position:'absolute', bottom:'420px',
     width: '60px',
     height:'60px',
     zIndex: '2',
@@ -54,8 +55,9 @@ const MenuComponent = () => {
 >
   <MenuIcon style={{height:'100%', maxHeight: '60px', zIndex:'2', color:'#fff' }} />
 </button>
+<div className="menusnapp" style={{position:'absolute', zIndex:'1', bottom:'300px', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
 
-<div className="menusnapp" style={{position:'absolute', zIndex:'2', top:'0', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
+
   
   <div id="" className="flexbutt" style={{ display: '', gap: '3vh', justifyContent: 'center', alignItems: "center", margin: '0 0', padding: '0', position: 'relative', minWidth:'80vw' }}>
     <div style={{ minWidth: '25vw', maxHeight: '20vh', textAlign: 'center', color: "#fff", }}>
