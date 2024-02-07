@@ -6,7 +6,7 @@ import { FaTwitch, FaFacebookSquare  } from "react-icons/fa";
 // import {Link} from "gatsby"
 // import { RiQuestionLine, RiCloseCircleFill } from "react-icons/ri"
 // import PirateLogo from "../img/logo.svg"
-// import PageMenu from "../components/PageMenu"
+import PageMenu from "../components/PageMenu"
 import Layout from "../components/siteLayout"
 import Seo from "../components/seo";
 import { Helmet } from "react-helmet";
@@ -115,7 +115,7 @@ const Video = () => {
 
 
 
-      <div className='player-wrapper' style={{position:'relative'}}>
+      <div className='player-wrapper' style={{}}>
 
 
         {/* <Player /> */}
@@ -123,7 +123,7 @@ const Video = () => {
               allow="web-share"
               ref={playerRef}
               style={{
-                position: 'relative', top:'0', margin: '0 auto 0 auto', zIndex: '1', aspectRatio:'16/9', overflow:'hidden', width:'100vw', minHeight:'90%', height:'100%', background:'transparent'}}
+                position: 'relative', top:'0', margin: '0 auto 0 auto', zIndex: '0', aspectRatio:'16/9', overflow:'hidden', width:'100vw', minHeight:'90%', height:'100%', background:'transparent'}}
               width="100%"
               height="100%"
               url={finalUrl}
@@ -141,7 +141,7 @@ const Video = () => {
       
 
       {/* <PageMenu /> */}
-      <div className="form-container controller" style={{position:'relative', zindex:'10', top:'0', marginTop:'0', height:'', padding:'2vh 2%', width:'100vw', background:'var(--theme-ui-colors-headerColor)'}}>
+      <div className="form-container controller font" style={{position:'relative', zIndex:'2', top:'0', marginTop:'0', height:'', padding:'2vh 2%', width:'100vw', background:'var(--theme-ui-colors-headerColor)'}}>
           <div style={{ maxWidth:'800px', margin:'0 auto'}}>
           <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
       
@@ -157,7 +157,7 @@ const Video = () => {
               <a title="Open Twitch" aria-label="Open Twitch" href="https://www.twitch.tv/directory" style={{ padding: '', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '', }}>
                 <FaTwitch style={{ fontSize: '30px' }} />
               </a>
-            <input
+              <input
             ref={inputElement}
             id="youtubelink-input"
               type="text"
@@ -166,16 +166,19 @@ const Video = () => {
               onInput={handleInputChange}
               onClick={handleInputClick}
               // onChange={handleInputChange}
-              style={{ padding: '1vh 1vw', width:'100%', minWidth: '', outline: '1px solid #333', borderRadius: 'var(--theme-ui-colors-borderRadius)', color: 'var(--theme-ui-colors-siteColor)' }}
+              style={{ padding: '.5vh 1vw', width:'100%', minWidth: '', outline: '1px solid #333', borderRadius: 'var(--theme-ui-colors-borderRadius)', color: 'var(--theme-ui-colors-siteColor)', fontSize:'clamp(.8rem,1.2vw,1.8rem)' }}
               placeholder="Paste Video Link"
               className="youtubelinker"
             />
-            <button type="reset" onClick={() => setYoutubelink("")} style={{ fontSize: '90%', color: '', fontWeight: 'bold', textAlign: 'left', width: '', margin: '5px 15px 0 0' }}>
+            <button type="reset" onClick={() => setYoutubelink("")} style={{ fontSize:'clamp(.8rem,1.2vw,1.8rem)', color: '', fontWeight: 'bold', textAlign: 'left', width: '', margin: '5px 15px 0 0' }}>
               Reset
             </button>
           </form>
           </div>
           </div>
+
+          <PageMenu />
+          
       </div>
 
 

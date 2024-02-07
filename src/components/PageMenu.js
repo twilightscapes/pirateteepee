@@ -43,7 +43,7 @@ const MenuComponent = () => {
     cursor: "pointer",
     padding: "0",
     fontSize: 'clamp(3rem, 3vw, 3rem)',
-    position:'absolute', bottom:'200px',
+    position:'absolute', top:'42%',
     width: '60px',
     height:'60px',
     zIndex: '2',
@@ -55,7 +55,7 @@ const MenuComponent = () => {
 >
   <MenuIcon style={{height:'100%', maxHeight: '60px', zIndex:'2', color:'#fff' }} />
 </button>
-<div className="menusnapp" style={{position:'absolute', zIndex:'1', bottom:'90px', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
+<div className="menusnapp" style={{position:'absolute', zIndex:'1', top:'42%', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
 
 
   
