@@ -20,13 +20,6 @@ function Switch() {
   });
 
   useEffect(() => {
-    if (isSliderVisible) {
-      // Set initial scroll position to the top when in grid view
-      // window.scrollTo(0, 0);
-    }
-  }, [isSliderVisible]);
-
-  useEffect(() => {
     document.body.style.overflowX = isSliderVisible ? 'hidden' : 'auto';
   }, [isSliderVisible]);
 
@@ -51,42 +44,6 @@ function Switch() {
       return newValue;
     });
   };
-  
-  
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // console.log("Scroll position:", window.scrollY);
-    };
-  
-    if (isSliderVisible) {
-      window.addEventListener('scroll', handleScroll);
-    } else {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isSliderVisible]);
-  
-  useEffect(() => {
-    const handleStorageChange = (event) => {
-      if (event.key === "isSliderVisible" && typeof window !== 'undefined') {
-        const storedValue = localStorage.getItem("isSliderVisible");
-        setIsSliderVisible(JSON.parse(storedValue));
-      }
-    };
-  
-    if (typeof window !== 'undefined') {
-      window.addEventListener("storage", handleStorageChange);
-  
-      return () => {
-        window.removeEventListener("storage", handleStorageChange);
-      };
-    }
-  }, []);
-  
 
   useEffect(() => {
     const handleStorageChange = (event) => {
