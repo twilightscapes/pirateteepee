@@ -49,7 +49,7 @@ export default function Seo({
 
   const [colorMode] = useColorMode();
   const colors = colorMode === "dark" ? darkColors : defaultColors;
-  const themeColor = colors.siteColor;
+  const themeColor = colors.siteBackground;
 
   return (
     <Helmet

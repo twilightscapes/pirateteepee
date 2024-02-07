@@ -4,6 +4,7 @@ import { Link } from 'gatsby-plugin-modal-routing-4'
 import "../styles/reset.css"
 import "../styles/global.css"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+// import { navigate } from "gatsby"
 import { Helmet } from "react-helmet"
 import Theme from "./theme"
 import SearchIcon from "../../src/img/search"
@@ -12,6 +13,7 @@ import { RiArrowUpFill } from "react-icons/ri"
 import GoBack from "../components/goBack"
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-4'
 import Menu from "../components/menu"
+import { BiLeftArrow } from "react-icons/bi"
 import Consent from "../components/Consent"
 import defaultColors from "../../static/data/default-colors.json";
 import userStyles from "../../static/data/userStyles.json"
@@ -48,7 +50,7 @@ const Layout = ({ children }) => {
   };
 
   const { language, navOptions, featureOptions, proOptions } = useSiteMetadata();
-  const { dicSearch, dicPirate } = language;
+  const { dicSearch, dicPirate, dicGoBack } = language;
   const { showNav, showNav2 } = navOptions
   const { showfooter, showSwipe, showSearch } = featureOptions
   const { showModals, showBranding, showConsent } = proOptions
@@ -81,23 +83,28 @@ const Layout = ({ children }) => {
       <Seo />
 
       <ModalRoutingContext.Consumer>
-  {({ modal, closeTo }) => {
-    // if (modal) {
-    //   document.body.style.position = 'fixed';
-    //   document.body.style.width = '100%';
-    //   return () => {
-    //     document.body.style.position = '';
-    //     document.body.style.width = '';
-    //   };
-    // }
-    return (
-      <>
-        <div>
-          {/* ... (modal-related code) */}
-        </div>
-      </>
-    );
-  }}
+      {({ modal, closeTo }) => (
+<>
+  {modal ? (
+
+
+<div style={{display:'flex', justifyContent: 'center', color: '#ccc',  position:'fixed', top:'60px', right:'1vw', padding:'0px', fontSize:'', opacity:'1 !important', zIndex:'10',}}>
+<Link state={{noScroll: true }} to={closeTo} style={{fontSize:'',  textDecoration:'none', lineHeight:'', display:'flex', flexDirection:'column', color:'#fff', cursor:'pointer'}}>
+<button className="button" style={{ display: 'flex', justifyContent: 'center', padding:'0 .5vw' }}><span className="icon -left" style={{ paddingRight: '' }}><BiLeftArrow /></span> {" "}{dicGoBack}</button>
+</Link>
+</div>
+
+
+
+
+
+
+
+  ) : (
+''
+  )}
+</>
+)}
 </ModalRoutingContext.Consumer>
 
 
