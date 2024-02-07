@@ -36,32 +36,33 @@ const MenuComponent = () => {
 
 
 <button
- className="flag"
+ className="flag bug"
   onClick={handleButtonClick}
   aria-label={isMenuOpen ? "Collapse menu" : "Expand menu"}
   style={{
     cursor: "pointer",
     padding: "0",
     fontSize: 'clamp(3rem, 3vw, 3rem)',
-    position:'absolute', top:'42%',
+    position:'absolute', top:'38%',
     width: '60px',
     height:'60px',
-    zIndex: '2',
-    opacity: '.5',
-    color:'',
-    display:'flex'
+    zIndex: '4',
+    display:'flex',
+    flexDirection:'column',
+    justifySelf:'flex-start',
+    textAlign:'center'
  // Adjust the borderRadius values as needed
   }}
 >
-  <MenuIcon style={{height:'100%', maxHeight: '60px', zIndex:'2', color:'#fff' }} />
+  <MenuIcon style={{height:'100%', maxHeight: '60px', top:'0', zIndex:'4', color:'#fff' }} />
 </button>
-<div className="menusnapp" style={{position:'absolute', zIndex:'1', top:'42%', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
+<div className="menusnapp" style={{position:'absolute', zIndex:'3', top:'38%', gap: "0", padding: "2vh 2vw", alignItems: "center", display: isMenuOpen ? "block" : "none", background:'var(--theme-ui-colors-headerBackground)', backgroundColor:'#222', width:'100dvw'  }}>
 
 
   
   <div id="" className="flexbutt" style={{ display: '', gap: '3vh', justifyContent: 'center', alignItems: "center", margin: '0 0', padding: '0', position: 'relative', minWidth:'80vw' }}>
-    <div style={{ minWidth: '25vw', maxHeight: '20vh', textAlign: 'center', color: "#fff", }}>
-      <PirateLogo style={{ minWidth: '', maxHeight: '20vh', position:'', top:'', left:'' }} />
+    <div style={{ minWidth: '25vw', maxHeight: '15vh', textAlign: 'center', color: "#fff", }}>
+      <PirateLogo style={{ minWidth: '', maxHeight: '15vh', position:'', top:'', left:'' }} />
       the web revolution
     </div>
     <div className="flexcheek mob2 print" style={{ position: '', top: '', minWidth: '25vw', overflow: '', marginBottom: '', paddingTop: '', borderRadius: 'var(--theme-ui-colors-borderRadius)', }}>

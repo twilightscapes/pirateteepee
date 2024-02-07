@@ -123,7 +123,7 @@ const Video = () => {
               allow="web-share"
               ref={playerRef}
               style={{
-                position: 'relative', top:'0', margin: '0 auto 0 auto', zIndex: '0', aspectRatio:'16/9', overflow:'hidden', width:'100vw', minHeight:'90%', height:'100%', background:'transparent'}}
+                position: 'relative', top:'0', margin: '0 auto 0 auto', zIndex: '1', aspectRatio:'16/9', overflow:'hidden', width:'100vw', minHeight:'90%', height:'100%', background:'transparent'}}
               width="100%"
               height="100%"
               url={finalUrl}

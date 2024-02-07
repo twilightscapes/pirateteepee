@@ -405,10 +405,10 @@ bottom: 10px !important;
 
 
 
-.bug{height:auto;max-width:150px;opacity:.7}
+.bug{height:auto;max-width:150px;opacity:.7;}
 .bug:hover{opacity:.6}
 
-.bug::after{content:" menu "; color:#fff;}
+.bug::after, .flag::after{content:" menu "; color:#fff; font-size: 10px; text-align: center; display:flex; flex-direction: column; justify-content: center; width:60px; margin:0 auto; filter:drop-shadow(1px 0 4px rgba(0,0,0,.9));}
 
 .fire{box-shadow:0 4px 22px var(--theme-ui-colors-siteColor)}
 
@@ -1254,7 +1254,7 @@ body.blogpost .featured-image1{border:0 solid red;max-height:70vh !important;max
 
 body:has(.ReactModal__Content) {overflow-x:hidden !important; overflow-y:hidden !important; position:fixed !important;}
   
-  .ReactModalPortal {margin:0; width:100; z-index: 2; position:absolute; top:0;}
+  .ReactModalPortal {margin:0; width:100; z-index: 4; position:absolute; top:0;}
   
   .ReactModal__Overlay{background-color:transparent !important;   background: rgba(0,0,0,0.90); backdrop-filter: blur(22px);}
   
