@@ -47,7 +47,7 @@ const sIcons = Icons.socialIcons.map((icons, index) => {
         ""
       )}
       {icons.icon === "twitter" ? (
-        <a aria-label="The App Formerly known as Twitter" title="The App Formerly known as Twitter" className="social" href={icons.url} rel="noreferrer" target="_blank">
+        <a aria-label="Link to Twitter X" title="The App Formerly known as Twitter" className="social" href={icons.url} rel="noreferrer" target="_blank">
           <Xlogo style={{maxWidth:'30px'}} />
         </a>
       ) : (
