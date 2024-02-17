@@ -34,7 +34,7 @@ const MenuComponent = () => {
           padding: "0",
           fontSize: "clamp(3rem, 3vw, 3rem)",
           position: "absolute",
-          top: "38%",
+          top: "110px",
           width: "60px",
           height: "60px",
           zIndex: "4",
@@ -53,7 +53,7 @@ const MenuComponent = () => {
         style={{
           position: "absolute",
           zIndex: "3",
-          top: "38%",
+          top: "110px",
           gap: "0",
           padding: "2vh 2vw",
           alignItems: "center",
@@ -63,7 +63,7 @@ const MenuComponent = () => {
           width: "100dvw",
         }}
       >
-        <div id="" className="flexbutt" style={{ display: "", gap: "3vh", justifyContent: "center", alignItems: "center", margin: "0 0", padding: "0", position: "relative", minWidth: "80vw" }}>
+        <div id="" className="flexbutt font" style={{ display: "", gap: "3vh", justifyContent: "center", alignItems: "center", margin: "0 0", padding: "0", position: "relative", minWidth: "80vw" }}>
           <div style={{ minWidth: "25vw", maxHeight: "15vh", textAlign: "center", color: "#fff" }}>
             <PirateLogo style={{ minWidth: "", maxHeight: "15vh", position: "", top: "", left: "" }} />
             the web revolution

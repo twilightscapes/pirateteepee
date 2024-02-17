@@ -27,6 +27,8 @@ const useSiteMetadata = () => {
             showTitles
             showSocial
             showVideoPlayer
+            showHomePosts
+            showProfile
           }
 
           proOptions{
@@ -38,9 +40,7 @@ const useSiteMetadata = () => {
             showPopup
             ShowDisclaimer
             startUrl
-            showProfile
             showFeature
-            showHomePosts
           }
           navOptions{
             showFooterMenu
