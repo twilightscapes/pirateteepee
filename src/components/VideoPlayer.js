@@ -98,7 +98,7 @@ const VideoPlayer = ({ location }) => {
       <div id="piratevideo" className='player-wrapper' style={{ display:'grid', placeContent:'', width:'100vw', transition: 'all 1s ease-in-out'}}>
 
         {/* Share Dialog */}
-        <div className="share-dialog" style={{ display: showShareDialog ? 'block' : 'none', zIndex:'5', }}>
+        <div className="share-dialog" style={{ display: showShareDialog ? 'block' : 'none', zIndex:'4', }}>
 
 <form style={{display:'flex', flexWrap: 'nowrap', alignItems:'center', gap:'2vw', width:'100vw', maxWidth:'800px', margin:'0 auto',  transition: 'all 1s ease-in-out'}}>
         
@@ -112,7 +112,7 @@ const VideoPlayer = ({ location }) => {
                 name="pagelink"
                 value={typeof window !== 'undefined' && window.location.href}
                 onChange={handleInputChange}
-                style={{ padding: '.5vh 1vw', width:'100%', maxWidth: '800px', fontSize:'clamp(.8rem,1.5vw,2rem)',transition: 'all 1s ease-in-out' }}
+                style={{ padding: '.5vh 1vw', width:'100%', maxWidth: '800px', fontSize:'clamp(.8rem,1.5vw,2rem)', color:'#fff', transition: 'all 1s ease-in-out' }}
                 // placeholder="Paste Video Link"
                 className="youtubelinker font link pen-url"
                 aria-label="Copy This Url"
@@ -124,7 +124,7 @@ const VideoPlayer = ({ location }) => {
 
         
 </form>
-      <button aria-label="Close" id="closeBtn" name="closeBtn" style={{ height: "", width:'100px', maxHeight: "", top: "", zIndex: "4", color: "#fff", display:'flex' }}className="close-button" onClick={closeShareDialog}>
+      <button aria-label="Close" id="closeBtn" name="closeBtn" style={{ height: "", width:'100px', maxHeight: "", top: "", zIndex: "", color: "#fff", display:'flex' }}className="close-button" onClick={closeShareDialog}>
            <RiCloseCircleFill style={{width:'40px', height:'40px', marginLeft:''}} /></button>
 
         </div>
@@ -134,7 +134,7 @@ const VideoPlayer = ({ location }) => {
 
 
         {/* Form Container */}
-        <div className="form-container controller font" style={{position:'relative', zIndex:'4', top:'0', height:'auto', width:'100vw', margin:'0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', background:'var(--theme-ui-colors-headerColor)'}}>
+        <div className="form-container controller font" style={{position:'relative', zIndex:'3', top:'0', height:'auto', width:'100vw', margin:'0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', background:'var(--theme-ui-colors-headerColor)'}}>
           <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop:'1.5vh' }}>
             <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
 
@@ -187,7 +187,7 @@ const VideoPlayer = ({ location }) => {
                 name="youtubelink"
                 value={youtubelink}
                 onChange={handleInputChange}
-                style={{ padding: '.5vh 1vw', width:'100%', maxWidth: '800px', fontSize:'clamp(.8rem,1.5vw,2rem)',transition: 'all 1s ease-in-out' }}
+                style={{ padding: '.5vh 1vw', width:'100%', maxWidth: '800px', fontSize:'clamp(.8rem,1.5vw,2rem)', transition: 'all 1s ease-in-out' }}
                 placeholder="Paste Video Link"
                 className="youtubelinker"
                 aria-label="Paste Video Link"

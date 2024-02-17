@@ -217,7 +217,7 @@ export default function Footer() {
     
 {showFooterMenu ? (
   <div className="menu print panel1" style={{}}>
-  <div id="footermenu" className="menu print panel1 header" style={{position:'relative', width:'100%', top:'0', zIndex:'', maxHeight:'', overFlow:'', boxShadow:'0 0 0 rgba(0,0,0,.7)', padding:'0 2%', margin:'', alignItems:'start', borderRadius:'0', display:'flex', justifyContent:'space-around', gap:'10px', color:'var(--theme-ui-colors-headerColorText)',  borderBottom:'0px solid #222',}}>
+  <div id="footermenu" className="menu print panel1 header" style={{position:'relative', width:'100%', top:'0', zIndex:'4', maxHeight:'', overFlow:'', boxShadow:'0 0 0 rgba(0,0,0,.7)', padding:'0 2%', margin:'', alignItems:'start', borderRadius:'0', display:'flex', justifyContent:'space-around', gap:'10px', color:'var(--theme-ui-colors-headerColorText)',  borderBottom:'0px solid #222',}}>
 
   <div style={{position:'absolute', left:'10px', top:'22px', cursor:'pointer'}}><BlueCheck /></div>
 
