@@ -76,13 +76,13 @@ const VideoPlayer = ({ location }) => {
           <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop: '1.5vh' }}>
             <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
               <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
-                <ImYoutube2 style={{ fontSize: '50px' }} />
+                <ImYoutube2 style={{ fontSize: '50px', opacity:'.5' }} />
               </a>
               <a title="Open Facebook" aria-label="Open Facebook" href="https://www.facebook.com/watch/">
-                <FaFacebookSquare style={{ fontSize: '30px' }} />
+                <FaFacebookSquare style={{ fontSize: '30px', opacity:'.5' }} />
               </a>
               <a title="Open Twitch" aria-label="Open Twitch" href="https://www.twitch.tv/directory">
-                <FaTwitch style={{ fontSize: '30px' }} />
+                <FaTwitch style={{ fontSize: '30px', opacity:'.5' }} />
               </a>
               <input
                 ref={inputElement}
