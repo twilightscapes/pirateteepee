@@ -248,19 +248,20 @@ body.blogpost .gatsby-image-wrapper {
 
 
 .hover .flexcheek:hover{ background: rgba(0,0,0,0.70) !important}
-.featurelist li:hover { background: rgba(0,0,0,0.80) !important}
+
 
 
 
 .featurelist li{
   display: block;
   padding:1rem;
-  background: rgba(0,0,0,0.70);
   margin:4px 0;
   border-radius:var(--theme-ui-colors-borderRadius);
-  color:#fff;
+  color:var(--theme-ui-colors-headerColorText);
+  border:1px #000 !important;
+  background: rgba(0, 0, 0, 0.1);
 }
-
+.featurelist li:hover { background: rgba(0, 0, 0, 0.2);}
 
 
 body.social .searchIcon{visibility:hidden;}
@@ -959,7 +960,7 @@ body.contactpage .ReactModal__Content{padding-top:10vh !important;}
   .cornerlogo{ left:18%; top:2px; width:117; height:60px; }
   
   .hover .flexcheek:hover{ background: rgba(0,0,0,0.70) !important}
-  .featurelist li:hover { background: rgba(0,0,0,0.80) !important}
+
   body.archivepage .spacer, body.homepage .spacer, body.tagpage .spacer{
     height:80px !important;
   }
