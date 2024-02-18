@@ -94,7 +94,7 @@ const VideoPlayer = ({ location }) => {
       <div id="piratevideo" className='player-wrapper' style={{ display: 'grid', placeContent: '', width: '100vw', transition: 'all 1s ease-in-out' }}>
         {/* Form Container */}
         <div className="form-container controller font" style={{ position: 'relative', zIndex: '3', top: '0', height: 'auto', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', background: 'var(--theme-ui-colors-headerColor)' }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto', padding:'1.5vh 1vw 0 1vw', }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto', padding:'2.5vh 1vw 0 1vw', }}>
             <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
 
 
