@@ -50,7 +50,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = result.data.allMarkdownRemark.edges;
   let blogPostsCount = 0;
   const categories = new Set();
-  const tags = new Set();
+  // const tags = new Set();
 
   posts.forEach((post, index) => {
     const id = post.node.id;
@@ -84,26 +84,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       postCategories.forEach((cat) => categories.add(cat));
     }
 
-    if (post.node.frontmatter.tags) {
-      post.node.frontmatter.tags.forEach((tag) => tags.add(tag));
-    }
+    // if (post.node.frontmatter.tags) {
+    //   post.node.frontmatter.tags.forEach((tag) => tags.add(tag));
+    // }
+
+
   });
 
   const postsPerPage = 18;
   const numPages = Math.ceil(blogPostsCount / postsPerPage);
 
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/archive/` : `/archive/${i + 1}`,
-      component: blogList,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    });
-  });
+  // Array.from({ length: numPages }).forEach((_, i) => {
+  //   createPage({
+  //     path: i === 0 ? `/archive/` : `/archive/${i + 1}`,
+  //     component: blogList,
+  //     context: {
+  //       limit: postsPerPage,
+  //       skip: i * postsPerPage,
+  //       numPages,
+  //       currentPage: i + 1,
+  //     },
+  //   });
+  // });
 
   // // Create home page with context including homecount
   // createPage({
@@ -141,7 +143,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           context: {
             category: singleCategory.toLowerCase(),
             posts: categoryPosts,
-            tags,
+            // tags,
           },
         });
       } else {
@@ -157,16 +159,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  const tagTemplate = path.resolve(`./src/templates/tag-template.js`);
-  tags.forEach((tag) => {
-    createPage({
-      path: `/tag/${tag}`,
-      component: tagTemplate,
-      context: {
-        tag,
-      },
-    });
-  });
+  // const tagTemplate = path.resolve(`./src/templates/tag-template.js`);
+  // tags.forEach((tag) => {
+  //   createPage({
+  //     path: `/tag/${tag}`,
+  //     component: tagTemplate,
+  //     context: {
+  //       tag,
+  //     },
+  //   });
+  // });
+
+  
 };
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
