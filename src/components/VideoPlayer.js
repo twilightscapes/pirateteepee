@@ -81,6 +81,14 @@ const VideoPlayer = ({ location }) => {
     }
   };
 
+
+  function isRunningStandalone() {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(display-mode: standalone)').matches;
+    }
+    return false;
+  }
+
   return (
     <>
       <div id="piratevideo" className='player-wrapper' style={{ display: 'grid', placeContent: '', width: '100vw', transition: 'all 1s ease-in-out' }}>
@@ -88,7 +96,13 @@ const VideoPlayer = ({ location }) => {
         <div className="form-container controller font" style={{ position: 'relative', zIndex: '3', top: '0', height: 'auto', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', background: 'var(--theme-ui-colors-headerColor)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop: '1.5vh' }}>
             <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
-              <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
+
+
+
+            {/* Video Platform Links */}
+            {isRunningStandalone() ? (
+                <>
+      <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
                 <ImYoutube2 style={{ fontSize: '50px', opacity:'.5' }} />
               </a>
               <a title="Open Facebook" aria-label="Open Facebook" href="https://www.facebook.com/watch/">
@@ -97,6 +111,17 @@ const VideoPlayer = ({ location }) => {
               <a title="Open Twitch" aria-label="Open Twitch" href="https://www.twitch.tv/directory">
                 <FaTwitch style={{ fontSize: '30px', opacity:'.5' }} />
               </a>
+                </>
+    
+                  ) : (
+                    ""
+          
+              )}
+
+
+
+
+              
               <input
                 ref={inputElement}
                 id="youtubelink-input"

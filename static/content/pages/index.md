@@ -82,11 +82,11 @@ spotlight: false
 comments: false
 shareable: false
 ---
-Pirate is your own <strong>Personal Web App (PWA)</strong> 
+Pirate is your own <strong>Personal Web App(PWA)</strong>, 
 It works on any device - NO App Store needed.
 
-Watch ad-free videos, edit your homepage, update your profile, and publish engaging content while maintaining FULL ownership and copyright control.
+Watch ad-free video, edit your homepage/profile, and publish content with FULL ownership and copyright.
 
-Pirate is also a new social media.  Using a decentralized network of other Pirate websites, YOU control the algorithm, not some corporation.
+A new social media, Pirate is a decentralized network of other Pirate users &amp; YOU control the algorithm.
 
 Using open-source platforms, Pirate operates forever, with no contracts, commitments or costs of any kind.
