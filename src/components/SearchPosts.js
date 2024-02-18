@@ -6,7 +6,7 @@ import useSiteMetadata from "../hooks/SiteMetadata";
 import ReactPlayer from 'react-player/lazy';
 import SignUp from './newssign'
 import TimeAgo from 'react-timeago';
-// import { MdArrowForwardIos } from 'react-icons/md';
+import { MdArrowForwardIos } from 'react-icons/md';
 import { ImPlay } from "react-icons/im";
 import { FaImage } from "react-icons/fa";
 import { AiOutlinePicLeft } from "react-icons/ai";
@@ -69,10 +69,10 @@ const BlogPosts = ({ isSliderVisible }) => {
     const { showMagicCat, showMagicTag } = magicOptions;
   
     const { showModals, showPopup } = proOptions
-    const { showDates, showTitles } = featureOptions
+    const { showDates, showArchive, showTitles } = featureOptions
 
     
-    const { dicLoadMore, dicCategory, dicKeyword, dicSearch, dicClear, dicResults, dicPlayVideo, dicPlayMultimedia  } = language;
+    const { dicLoadMore, dicViewArchive, dicCategory, dicKeyword, dicSearch, dicClear, dicResults, dicPlayVideo, dicPlayMultimedia  } = language;
 
 
 
@@ -416,13 +416,13 @@ const [playingIndex, setPlayingIndex] = useState(null);
           
         )}
 
-{/* {showArchive ? (
+{showArchive ? (
       
       <Link state={showModals ? { modal: true } : {}} to="/archive" className="font" style={{ background: 'var(--theme-ui-colors-headerColor)', borderRadius: 'var(--theme-ui-colors-borderRadius)', color: 'var(--theme-ui-colors-headerColorText)', display: 'flex', padding: '8px', margin: '0 auto', justifyContent:'center', maxWidth:'300px', alignItems:'center', }}>{dicViewArchive} &nbsp;<MdArrowForwardIos style={{ marginTop: '' }} /></Link>
 
   ) : (
     ""
-  )} */}
+  )}
 </div>
 
 {showPopup ? (
@@ -457,7 +457,7 @@ const [playingIndex, setPlayingIndex] = useState(null);
       >
 
 
-          <div className="magicisland">
+          <div className="magicisland" style={{padding:'1.5vh 1vw 0 1vw',}}>
             <div className="cattags font panel" >
               {showMagicCat ? (
                 <>

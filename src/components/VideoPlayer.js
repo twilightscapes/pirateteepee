@@ -50,10 +50,10 @@ const VideoPlayer = ({ location }) => {
       console.error("Invalid URL:", value);
     }
 
-    const pirateVideoElement = document.getElementById('VideoPlayer');
-    if (pirateVideoElement) {
-      pirateVideoElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    // const pirateVideoElement = document.getElementById('VideoPlayer');
+    // if (pirateVideoElement) {
+    //   pirateVideoElement.scrollIntoView({ behavior: 'smooth' });
+    // }
   };
 
   const handleSubmit = (event) => {
@@ -94,7 +94,7 @@ const VideoPlayer = ({ location }) => {
       <div id="piratevideo" className='player-wrapper' style={{ display: 'grid', placeContent: '', width: '100vw', transition: 'all 1s ease-in-out' }}>
         {/* Form Container */}
         <div className="form-container controller font" style={{ position: 'relative', zIndex: '3', top: '0', height: 'auto', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', background: 'var(--theme-ui-colors-headerColor)' }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop: '1.5vh' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto', padding:'1.5vh 1vw 0 1vw', }}>
             <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
 
 
@@ -134,10 +134,10 @@ const VideoPlayer = ({ location }) => {
                 className="youtubelinker"
                 aria-label="Paste Link To Video"
               />
-              <button aria-label="Reset" type="reset" onClick={handleReset} disabled={!youtubelink} style={{ color: '', fontSize: 'clamp(.8rem,1.5vw,2rem)', fontWeight: 'bold', textAlign: 'left', width: '', margin: '5px 15px 0 0' }}>
+              <button aria-label="Reset" type="reset" onClick={handleReset} disabled={!youtubelink} style={{ color: '', fontSize: 'clamp(.8rem,1.5vw,2rem)', fontWeight: 'bold', textAlign: 'left', width: '40px', margin: '5px 15px 0 0' }}>
                 Reset
               </button>
-              <button aria-label="Copy Link" onClick={copyToClipboard} disabled={!youtubelink} style={{ display: "flex", gap: '.5vw', justifyContent: "center", padding: ".5vh .8vw", maxHeight: "", margin: "0 auto", textAlign: 'center', fontSize: '14px', fontWeight: 'light', textShadow: '0 1px 0 #000' }} className="button font print">
+              <button aria-label="Copy Link" onClick={copyToClipboard} disabled={!youtubelink} style={{ display: "flex", gap: '.5vw', justifyContent: "center", padding: ".5vh .8vw", width:'80px', maxHeight: "", margin: "0 auto", textAlign: 'center', fontSize: '14px', fontWeight: 'light', textShadow: '0 1px 0 #000' }} className="button font print">
                 <svg style={{ maxWidth: '30px', maxHeight: '30px' }}>
                   <use href="#share-icon"></use>
                 </svg>   {copied ? 'Copied Link' : 'Copy Link'}
