@@ -205,7 +205,7 @@ export default function Footer() {
 
 
 
-      <footer className="panel" style={{display:'flex', flexDirection:'column', zIndex:'1', justifyContent:'end', padding:'0', marginTop:'0', width:'100vw',textAlign:'center', background:'var(--theme-ui-colors-headerColor)'}}>
+      <footer className="panel" style={{display:'flex', flexDirection:'column', zIndex:'', justifyContent:'end', padding:'0', marginTop:'0', width:'100vw',textAlign:'center', background:'var(--theme-ui-colors-headerColor)', paddingTop: showFooterMenu ? '100px' : '0'}}>
 
 {/* {showConsent ? (
     <Consent />
@@ -217,80 +217,59 @@ export default function Footer() {
     
 {showFooterMenu ? (
   <div className="menu print panel1" style={{}}>
-  <div id="footermenu" className="menu print panel1 header" style={{position:'relative', width:'100%', top:'0', zIndex:'4', maxHeight:'', overFlow:'', boxShadow:'0 0 0 rgba(0,0,0,.7)', padding:'0 2%', margin:'', alignItems:'start', borderRadius:'0', display:'flex', justifyContent:'space-around', gap:'10px', color:'var(--theme-ui-colors-headerColorText)',  borderBottom:'0px solid #222',}}>
+    <div id="footermenu" className="menu print panel1 header" style={{position:'absolute', width:'100%', top:'0', zIndex:'10', maxHeight:'', overFlow:'', boxShadow:'0 0 0 rgba(0,0,0,.7)', padding:'0 2%', marginBottom:'', alignItems:'start', borderRadius:'0', display:'flex', justifyContent:'space-around', gap:'10px', color:'var(--theme-ui-colors-headerColorText)',  borderBottom:'0px solid #222',}}>
 
-  <div style={{position:'absolute', left:'10px', top:'22px', cursor:'pointer'}}><BlueCheck /></div>
+      <div style={{position:'absolute', left:'10px', top:'22px', cursor:'pointer'}}><BlueCheck /></div>
 
+      <Link state={showModals ? { modal: true } : {}} to="/" className="cornerlogo" name="homereturn" style={{position:'', display:'flex', marginLeft:'25px', alignItems:'center', justifyContent:'center', maxWidth:'', height:'60px', border:'0px solid transparent'}}  aria-label="Link to Top" title="Back to Top">
+        {iconimage ? (
+          <img className="cornerlogo" style={{position:'relative', top:'', left:'4%', border:'0px solid white', padding:'0', maxHeight:'60px'}} src={iconimage} alt={companyname} width="111" height="60" />
+        ) : (
+          <div style={{fontWeight:'', display:'grid', justifyContent:'center', alignItems:'center', height:'', fontSize:'clamp(.9rem,2vw,1rem)', color:'var(--theme-ui-colors-headerColorText)', maxWidth:'50vw' }}>
+            {/* {truncateText(companyname, 28)} */}
+            {companyname}
+          </div>
+        )}
+      </Link>
 
-<Link state={showModals ? { modal: true } : {}} to="/" className="cornerlogo" name="homereturn" style={{position:'', display:'flex', marginLeft:'25px', alignItems:'center', justifyContent:'center', maxWidth:'', height:'60px', border:'0px solid transparent'}}  aria-label="Link to Top" title="Back to Top">
-{iconimage ? (
-<img className="cornerlogo" style={{position:'relative', top:'', left:'4%', border:'0px solid white', padding:'0', maxHeight:'60px'}} src={iconimage} alt={companyname} width="111" height="60" />
-) : (
-<div style={{fontWeight:'', display:'grid', justifyContent:'center', alignItems:'center', height:'', fontSize:'clamp(.9rem,2vw,1rem)', color:'var(--theme-ui-colors-headerColorText)', maxWidth:'50vw' }}>
-  {/* {truncateText(companyname, 28)} */}
-{companyname}
-</div>
-)}
-</Link>
+      <ul className="topmenu" style={{ fontSize:'clamp(.6rem, 1.6vw, 1.8rem)',  textAlign:'center',maxHeight:'', display:'flex', justifyContent:'space-between', gap:'4vw',  alignItems:'center', margin:'0 auto 0 auto', padding:'1.5vh 2% 0 2%', border:'0px solid white',}}>
+        <Menu />
+      </ul>
 
-
-          
-
-
-
-
-
-<ul className="topmenu" style={{ fontSize:'clamp(.6rem, 1.6vw, 1.8rem)',  textAlign:'center',maxHeight:'', display:'flex', justifyContent:'space-between', gap:'4vw',  alignItems:'center', margin:'0 auto 0 auto', padding:'1.5vh 2% 0 2%', border:'0px solid white',}}>
-<Menu />
-</ul>
-
-<div id="missioncontrol" className="missioncontrol sitecontrols" style={{display:'flex', justifyContent:'space-around', fontSize:'clamp(.8rem, 2.3vw, 2.5rem)', gap:'3vw', textAlign:'center', maxHeight:'', alignItems:'center', paddingTop:'5px'}}>
-
-{showSearch ? (
-<div className="searchIcon">
-   <Link state={showModals ? { modal: true } : {}} aria-label="Search" to="/search/" style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', marginTop:'0px', textAlign:'center'}}>
-    <SearchIcon style={{height:'30px'}} />
-    <span className="themetext">{dicSearch}</span>
-   </Link>
+      <div id="missioncontrol" className="missioncontrol sitecontrols" style={{display:'flex', justifyContent:'space-around', fontSize:'clamp(.8rem, 2.3vw, 2.5rem)', gap:'3vw', textAlign:'center', maxHeight:'', alignItems:'center', paddingTop:'5px'}}>
+        {showSearch ? (
+          <div className="searchIcon">
+            <Link state={showModals ? { modal: true } : {}} aria-label="Search" to="/search/" style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', marginTop:'0px', textAlign:'center'}}>
+              <SearchIcon style={{height:'30px'}} />
+              <span className="themetext">{dicSearch}</span>
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
+        <div>
+          <Theme  style={{}} />
         </div>
-      ) : (
-        ""
-      )}
-
-
-  <div>
-      <Theme  style={{}} />
-        </div>
-
-  
         {showSwipe ? (
-  <Switch />
-      ) : (
-        ""
-      )}
- 
-
-
-</div>
-
-</div>
-</div>
+          <Switch />
+        ) : (
+          ""
+        )}
+      </div>
+    </div>
+  </div>
 ) : (
   ""
-  )}
+)}
 
+{/* <Install /> */}
 
+{ showContact ? (
+  <Link id="footercontact" state={{modal: true}} to="/contact/" className="button  font" style={{margin:'2rem', textDecoration:'none', padding:'1vh 2rem', }}>{dicContact}</Link>
+) : (
+  ""
+)}
 
-    {/* <Install /> */}
-    
-
-    
-
-    { showContact ? (
-      <Link id="footercontact" state={{modal: true}} to="/contact/" className="button  font" style={{margin:'2rem', textDecoration:'none', padding:'1vh 2rem',}}>{dicContact}</Link>
-      ) : (
-        ""
-      )}
 
 
 
