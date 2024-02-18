@@ -14,7 +14,7 @@ const VideoPlayer = ({ location }) => {
   const inputElement = useRef(null);
   const playerRef = useRef(null);
   const [youtubelink, setYoutubelink] = useState(videoUrlParam || "");
-  const [copied, setCopied] = useState(false); // State to track if link is copied
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const fillFormFromClipboard = async () => {
@@ -30,6 +30,7 @@ const VideoPlayer = ({ location }) => {
           updateQueryString(clipboardText);
         } else {
           console.error("Invalid URL copied from clipboard:", clipboardText);
+          // You can handle this case accordingly, such as displaying a message to the user
         }
       } catch (error) {
         console.error("Error reading clipboard:", error.message);
@@ -37,7 +38,6 @@ const VideoPlayer = ({ location }) => {
       }
     };
     
-
     fillFormFromClipboard();
   }, []);
 
@@ -72,9 +72,12 @@ const VideoPlayer = ({ location }) => {
 
   const copyToClipboard = () => {
     if (typeof window !== 'undefined') {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true); // Set copied state to true when link is copied
-      setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
+      navigator.clipboard.writeText(window.location.href)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000); // Reset 'copied' state after 2 seconds
+        })
+        .catch((error) => console.error("Error copying to clipboard:", error));
     }
   };
 
