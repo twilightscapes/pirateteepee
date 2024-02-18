@@ -934,7 +934,7 @@ ul li{display:inline-block}
     /* height: 100% !important; */
   }
 
-  .player-wrapper .menusnapp{top:72% !important;}
+  /* .player-wrapper .menusnapp{top:72% !important;} */
 
   body.blogpost {padding-top:8vh !important;}
   /* .grid-container .post-card1 iframe{margin-left:-5%;} */
@@ -1313,6 +1313,18 @@ html:has body.youtube{position:fixed !important; overflow: hidden !important;}
   {display: none !important;}
 
 
+  html, body.youtube {
+    touch-action: manipulation;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  @media (min-width: 1024px) {
+    html, body.youtube {
+      overflow-x: auto;
+      max-width: none;
+    }
+  }
 
 
 
@@ -1376,7 +1388,7 @@ margin: 0 auto;
 .youtubelinker {
   background: var(--theme-ui-colors-headerColor);
   padding: 1vh 0.5vw;
-  min-width: 200px;
+  /* min-width: 200px; */
   outline: 1px solid #999;
   border-radius: var(--theme-ui-colors-borderRadius);
   color: var(--theme-ui-colors-headerColorText);
@@ -1759,8 +1771,8 @@ body:has(.ReactModal__Content) .upbar{ transform:translateY(0);}
     padding: 1vh 2vw;
     margin:0 auto;
     border-radius: var(--theme-ui-colors-borderRadius);
-    background-color: #111;
-    color: #fff;
+    /* background-color: #111; */
+    /* color: #fff; */
   
 
 }

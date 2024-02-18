@@ -3,8 +3,9 @@ import ReactPlayer from 'react-player/lazy';
 import { ImYoutube2 } from "react-icons/im";
 import { FaTwitch, FaFacebookSquare } from "react-icons/fa";
 import useSiteMetadata from "../hooks/SiteMetadata";
-import { RiCloseCircleFill } from "react-icons/ri";
-import { Link } from "gatsby"
+import PageMenu from "../components/PageMenu"
+// import { RiCloseCircleFill } from "react-icons/ri";
+// import { Link } from "gatsby"
 const VideoPlayer = ({ location }) => {
   const queryParams = new URLSearchParams(location.search);
   const videoUrlParam = queryParams.get('video');
@@ -19,7 +20,7 @@ const VideoPlayer = ({ location }) => {
   const inputElement = useRef(null);
   const playerRef = useRef(null);
   const [youtubelink, setYoutubelink] = useState(videoUrlParam || "");
-  const [showShareDialog, setShowShareDialog] = useState(false);
+  // const [showShareDialog, setShowShareDialog] = useState(false);
 
   useEffect(() => {
     const fillFormFromClipboard = async () => {
@@ -60,36 +61,36 @@ const VideoPlayer = ({ location }) => {
     window.history.pushState({}, '', newUrl);
   };
 
-  function isRunningStandalone() {
-    if (typeof window !== 'undefined') {
-      return window.matchMedia('(display-mode: standalone)').matches;
-    }
-    return false;
-  }
+  // function isRunningStandalone() {
+  //   if (typeof window !== 'undefined') {
+  //     return window.matchMedia('(display-mode: standalone)').matches;
+  //   }
+  //   return false;
+  // }
 
-  const handleShareButtonClick = () => {
-    if (typeof window !== 'undefined') {
-      if (navigator.share) { 
-        navigator.share({
-          title: 'PIRATE',
-          url: window.location.href // Use the current URL with the query string
-        }).then(() => {
-          console.log('Thanks for being a PIRATE!');
-        })
-        .catch(console.error);
-      } else {
-        setShowShareDialog(true);
-      }
-    }
-  };
+  // const handleShareButtonClick = () => {
+  //   if (typeof window !== 'undefined') {
+  //     if (navigator.share) { 
+  //       navigator.share({
+  //         title: 'PIRATE',
+  //         url: window.location.href // Use the current URL with the query string
+  //       }).then(() => {
+  //         console.log('Thanks for being a Pirate!');
+  //       })
+  //       .catch(console.error);
+  //     } else {
+  //       setShowShareDialog(true);
+  //     }
+  //   }
+  // };
 
-  const closeShareDialog = () => {
-    setShowShareDialog(false);
-  };
+  // const closeShareDialog = () => {
+  //   setShowShareDialog(false);
+  // };
 
   const copyToClipboard = () => {
     if (typeof window !== 'undefined') {
-      navigator.clipboard.writeText(window.location.href); // Copy the current URL with the query string to clipboard
+      navigator.clipboard.writeText(window.location.href); // Copy the current URL  query string
     }
   };
 
@@ -98,13 +99,12 @@ const VideoPlayer = ({ location }) => {
       <div id="piratevideo" className='player-wrapper' style={{ display:'grid', placeContent:'', width:'100vw', transition: 'all 1s ease-in-out'}}>
 
         {/* Share Dialog */}
-        <div className="share-dialog" style={{ display: showShareDialog ? 'block' : 'none', zIndex:'4', }}>
+        {/* <div className="share-dialog" style={{ display: showShareDialog ? 'block' : 'none', zIndex:'4' }}>
 
-<form style={{display:'flex', flexWrap: 'nowrap', alignItems:'center', gap:'2vw', width:'100vw', maxWidth:'800px', margin:'0 auto',  transition: 'all 1s ease-in-out'}}>
+<form className="panel" style={{display:'flex', flexWrap: 'nowrap', alignItems:'center', gap:'2vw', width:'100vw', maxWidth:'800px', margin:'0 auto',  transition: 'all 1s ease-in-out', background:'var(--theme-ui-colors-headerColor)'}}>
         
 
-
-          <Link to='/install' state={{modal: true}} style={{ display: "flex", justifyContent: "center", padding: ".5vh 1vw", maxWidth:'100px', maxHeight:"60px", margin: "0 auto", textAlign:'center', fontSize:'18px', fontWeight:'light', textShadow:'0 1px 0 #000' }} className="button print">Install Pirate</Link>
+          <Link to='/install' state={{modal: true}} style={{ display: "flex", justifyContent: "center", padding: ".5vh .3vw", maxHeight:"", margin: "0 auto", textAlign:'center', fontSize:'14px', fontWeight:'light', textShadow:'0 1px 0 #000' }} className="button print"  title="Add To Home Screen To Install PIRATE Lite" >Install Pirate</Link>
 
       <div className="link">
             <input
@@ -112,12 +112,12 @@ const VideoPlayer = ({ location }) => {
                 name="pagelink"
                 value={typeof window !== 'undefined' && window.location.href}
                 onChange={handleInputChange}
-                style={{ padding: '.5vh 1vw', width:'100%', maxWidth: '800px', fontSize:'clamp(.8rem,1.5vw,2rem)', color:'#fff', transition: 'all 1s ease-in-out' }}
+                style={{ padding: '.5vh 1vw', width:'100%', maxWidth: '800px', fontSize:'clamp(.8rem,1.5vw,2rem)', color:'', transition: 'all 1s ease-in-out' }}
                 // placeholder="Paste Video Link"
                 className="youtubelinker font link pen-url"
                 aria-label="Copy This Url"
               />
-            <button aria-label="Copy Link" className="copy-link font" onClick={copyToClipboard} style={{ color: '#fff', fontSize:'clamp(.8rem,1.5vw,2rem)', fontWeight: 'bold', textAlign: 'left', width: '', margin: '5px 15px 0 0' }}>Copy Link</button>
+            <button aria-label="Copy Link" className="copy-link font" onClick={copyToClipboard} style={{ color: '', fontSize:'clamp(.8rem,1.5vw,2rem)', fontWeight: 'bold', textAlign: 'left', width: '', margin: '5px 15px 0 0' }}>Copy Link</button>
           </div>
 
 
@@ -127,7 +127,7 @@ const VideoPlayer = ({ location }) => {
       <button aria-label="Close" id="closeBtn" name="closeBtn" style={{ height: "", width:'100px', maxHeight: "", top: "", zIndex: "", color: "#fff", display:'flex' }}className="close-button" onClick={closeShareDialog}>
            <RiCloseCircleFill style={{width:'40px', height:'40px', marginLeft:''}} /></button>
 
-        </div>
+        </div> */}
 
         {/* Share Button */}
         {/* <button className="share-button" onClick={handleShareButtonClick}>Share</button> */}
@@ -138,7 +138,7 @@ const VideoPlayer = ({ location }) => {
           <div style={{ maxWidth: '800px', margin: '0 auto', paddingTop:'1.5vh' }}>
             <form className="youtubeform frontdrop" onSubmit={handleSubmit} id="youtubeform" name="youtubeform">
 
-            {isRunningStandalone() ? (
+            {/* {!isRunningStandalone() ? ( */}
                 <>
                   <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
                     <ImYoutube2 style={{ fontSize: '50px' }} />
@@ -150,18 +150,18 @@ const VideoPlayer = ({ location }) => {
                     <FaTwitch style={{ fontSize: '30px' }} />
                   </a>
                 </>
-              ) : (
+              {/* ) : ( */}
                 <>
 
-{showBranding ? (
+{/* {showBranding ? (
 <>
-<button style={{ display: "flex", justifyContent: "center", padding: "0 .3vw", maxHeight:"60px", margin: "0 auto", textAlign:'center', fontSize:'14px', fontWeight:'light', textShadow:'0 1px 0 #000' }} className="button print" type="button" title="Add To Home Screen To Install PIRATE" onClick={handleShareButtonClick}>
+<button style={{ display: "flex", justifyContent: "center", padding: ".5vh .3vw", maxHeight:"", margin: "0 auto", textAlign:'center', fontSize:'14px', fontWeight:'light', textShadow:'0 1px 0 #000' }} className="button print" type="button" title="Add To Home Screen To Install PIRATE Lite" onClick={handleShareButtonClick}>
                     
-                    <div style={{ display: "flex", alignItems:'center', justifyContent: "center", padding: "4px .3vw", maxWidth: "", margin: "0 auto", textAlign:'center', fontSize:'12px', lineHeight:'100%', fontWeight:'light', textShadow:'0 1px 0 #000' }}>
+                    <div style={{ display: "flex", alignItems:'center', justifyContent: "center", gap:'1vw', padding: "4px .3vw", maxWidth: "", margin: "0 auto", textAlign:'center', fontSize:'12px', lineHeight:'100%', fontWeight:'light', textShadow:'0 1px 0 #000', marginLeft:'10px' }}>
 
                     <svg style={{maxWidth:'30px', maxHeight:'30px'}}>
                       <use href="#share-icon"></use>
-                    </svg> Add To Home Screen To Install Pirate Video</div>
+                    </svg>   SHARE</div>
                   </button>
 
                   
@@ -173,11 +173,11 @@ const VideoPlayer = ({ location }) => {
 </>
           ) : (
             ""
-          )}
+          )} */}
                   
                   
                 </>
-              )}
+              {/* )} */}
 
 
               <input
@@ -195,9 +195,33 @@ const VideoPlayer = ({ location }) => {
               <button aria-label="Reset" type="reset" onClick={handleReset} style={{ color: '', fontSize:'clamp(.8rem,1.5vw,2rem)', fontWeight: 'bold', textAlign: 'left', width: '', margin: '5px 15px 0 0' }}>
                 Reset
               </button>
+
+              <button aria-label="Copy Link" onClick={copyToClipboard} style={{ display: "flex", gap:'.5vw', justifyContent: "center", padding: ".5vh .8vw", maxHeight:"", margin: "0 auto", textAlign:'center', fontSize:'14px', fontWeight:'light', textShadow:'0 1px 0 #000' }} className="button font print">    <svg style={{maxWidth:'30px', maxHeight:'30px'}}>
+                      <use href="#share-icon"></use>
+                    </svg>   Copy Link</button>
+
+                    
+
+
+
             </form>
           </div>
         </div>
+
+        <svg className="hidden">
+                    <defs>
+                      <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol>
+                    </defs>
+                  </svg>
+
+
+      {showBranding ? (
+                  <PageMenu />
+                  ) : (
+                    ""
+                  )}
+
+
 
         {/* ReactPlayer */}
         <ReactPlayer

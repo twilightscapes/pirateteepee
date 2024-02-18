@@ -34,7 +34,7 @@ const MenuComponent = () => {
           padding: "0",
           fontSize: "clamp(3rem, 3vw, 3rem)",
           position: "absolute",
-          top: "110px",
+          top: "140px",
           width: "60px",
           height: "60px",
           zIndex: "4",
@@ -53,7 +53,7 @@ const MenuComponent = () => {
         style={{
           position: "absolute",
           zIndex: "3",
-          top: "110px",
+          top: "80px",
           gap: "0",
           padding: "2vh 2vw",
           alignItems: "center",
