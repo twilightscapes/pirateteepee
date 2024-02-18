@@ -83,7 +83,7 @@ comments: false
 shareable: false
 ---
 Pirate is your own <strong>Personal Web App(PWA)</strong>, 
-It works on any device - NO App Store needed.
+It works on any device, even your TV - NO App Store needed.
 
 Watch ad-free video, edit your homepage/profile, and publish content with FULL ownership and copyright.
 
