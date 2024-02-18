@@ -7,19 +7,19 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 // import { navigate } from "gatsby"
 import { Helmet } from "react-helmet"
 import Theme from "./theme"
-import SearchIcon from "../../src/img/search"
+import SearchIcon from "../img/search"
 import useSiteMetadata from "../hooks/SiteMetadata"
 import { RiArrowUpFill } from "react-icons/ri"
-import GoBack from "../components/goBack"
+import GoBack from "./goBack"
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-4'
-import Menu from "../components/menu"
+import Menu from "./menu-social"
 import { BiLeftArrow } from "react-icons/bi"
-import Consent from "../components/Consent"
+import Consent from "./Consent"
 import defaultColors from "../../static/data/default-colors.json";
 import userStyles from "../../static/data/userStyles.json"
-import Switch from "../components/Switch"
+import Switch from "./Switch"
 import BlueCheck from './bluecheck';
-import Footer from "../components/footer"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const [showBackToTop, setShowBackToTop] = useState(false);
