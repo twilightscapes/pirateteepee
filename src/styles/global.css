@@ -413,7 +413,7 @@ bottom: 10px !important;
 .fire{box-shadow:0 4px 22px var(--theme-ui-colors-siteColor)}
 
 .round,.round img{border-radius:var(--theme-ui-colors-borderRadius)}
-.sharebutts svg{background-color:transparent;border:0 solid red;color:#fff;fill:#ddd}
+.sharebutts svg{background-color:transparent; color:inherit; fill:var(--theme-ui-colors-siteColorText);}
 .social-icons{display:flex;font-size:3rem;gap:16px;margin-top:10px}
 
 
