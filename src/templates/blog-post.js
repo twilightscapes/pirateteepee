@@ -52,7 +52,7 @@ import ReactPlayer from 'react-player/lazy'
 // import YouTubed from "../components/youtube"
 import Seo from "../components/seo"
 import Layout from "../components/siteLayout"
-import ShareSocial from '../components/share' 
+import ShareSocial from '../components/share-alt' 
 // import GoBack from "../components/goBack"
 import { ImPlay } from "react-icons/im"
 import TimeAgo from 'react-timeago'
