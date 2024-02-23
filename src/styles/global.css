@@ -1315,23 +1315,46 @@ html:has body.youtube{position:fixed !important; overflow: hidden !important;}
   body.youtube .upbar 
   {display: none !important;}
 
-  .video-blocker {
-    content:"❮❮scroll";
+.blocked-video::before{
+  content:"Pirate Video Pro";
     position: fixed;
-    top: 90px;
+    top: 60px;
     left: 0;
     width: 100vw;
     height: 99%;
-    z-index: 3;
+    z-index: 5;
+    display:grid;
+    place-content: center;
     border:0px solid yellow !important;
-    display: block;
-    /* background: url('your-image-url.jpg') no-repeat center center; */
     background:transparent;
     background-size: cover;
-    
+    font-size: clamp(2rem,3vw,3rem);
 }
+/* .blocked-video{border:2px solid red !important;} */
 
 
+
+
+  /* #piratevideo div.showBlocker[allow="web-share"] {border:10px solid green !important;} */
+  /* #piratevideo div.showBlocker[allow="web-share"] {border:1px solid green !important;} */
+  /* .video-blocker {
+    content:"❮❮scroll";
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: 99%;
+    z-index: 5;
+    border:2px solid yellow !important;
+    display: block;
+    background:transparent;
+    background-size: cover;  
+} */
+
+
+input {
+    font-size: 16px !important;
+}
 
 
   /* html, body.youtube {
@@ -1392,7 +1415,7 @@ body.youtube .player-wrapper {max-height: 100dvh;}
 
 /* Form container */
 .form-container {
-min-height: 80px;
+/* min-height: 80px; */
   /* justify-content: center;
   align-items: center; */
   padding: 0 ;

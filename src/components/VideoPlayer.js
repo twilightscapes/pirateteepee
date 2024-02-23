@@ -20,11 +20,12 @@ const VideoPlayer = ({ location }) => {
     const [hideEditor, setHideEditor] = useState(queryParams.get('hideEditor') === 'true');
     const [shouldHideEditor, setShouldHideEditor] = useState(false); // New state to track if editor should hide
 
-    // Function to handle hideEditor checkbox change
-    const handleHideEditorChange = (event) => {
-        const checked = event.target.checked;
-        updateQueryString({ hideEditor: checked }); 
-    };
+// Function to handle hideEditor checkbox change
+const handleHideEditorChange = (event) => {
+    const checked = event.target.checked;
+    setHideEditor(checked); // Update hideEditor state
+    updateQueryString({ hideEditor: checked }); // Update query string
+};
 
     // Effect to initialize hideEditor state based on query parameter
     useEffect(() => {
@@ -301,7 +302,9 @@ const VideoPlayer = ({ location }) => {
 
             {showPro ? (
 
-<div className=" font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', height: hideEditor ? '0' : '80px', background: 'var(--theme-ui-colors-headerColor)', }}>
+<div className="font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', height: hideEditor ? '0' : '0', 
+// background: 'var(--theme-ui-colors-headerColor)',
+ }}>
 
                 <form 
       className="youtubeform1 frontdrop1" 
@@ -320,7 +323,7 @@ const VideoPlayer = ({ location }) => {
         transform: hideEditor ? 'translateY(-100%)' : 'none',
         transition: 'transform 0.3s ease-in-out',
         background: 'var(--theme-ui-colors-headerColor)',
-        height: hideEditor ? 'auto' : '0'
+        // height: hideEditor ? '0' : 'auto'
 
       }}
     >
@@ -505,9 +508,20 @@ const VideoPlayer = ({ location }) => {
                     </form>
 
                     </div>
+
+
+
+
                 
     ) : (
-<div className=" font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', height: hideEditor ? '0' : '80px', background: 'var(--theme-ui-colors-headerColor)', }}>
+
+
+
+
+
+<div className=" font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '0', transition: 'all 1s ease-in-out', height: hideEditor ? 'auto' : '0',
+//  background: 'var(--theme-ui-colors-headerColor)',
+  }}>
 
 <form 
 className="youtubeform1 frontdrop1" 
@@ -526,7 +540,7 @@ padding: '1vh 2vw',
 transform: hideEditor ? 'translateY(-100%)' : 'none',
 transition: 'transform 0.3s ease-in-out',
 background: 'var(--theme-ui-colors-headerColor)',
-height: hideEditor ? 'auto' : '0'
+// height: hideEditor ? 'auto' : '0'
 
 }}
 >
