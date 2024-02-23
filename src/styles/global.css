@@ -1373,14 +1373,14 @@ body.youtube .player-wrapper {max-height: 100dvh;}
 
 
 /* #pwabanner {
-  visibility: visible;
+  opacity: 0;
   overflow: hidden;
-  animation: showBanner 3s 3s forwards; 
+  animation: showBanner 3s 1s forwards; 
 }
 
 @keyframes showBanner {
   to {
-    visibility:visible;
+    opacity:100;
   }
 } */
 

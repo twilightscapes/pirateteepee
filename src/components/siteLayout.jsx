@@ -93,15 +93,7 @@ const Layout = ({ children }) => {
 
       <Seo />
 
-{showPWA ? (
-<>
-{!isRunningStandalone() && (
-<PwaInstaller />
-)}
-</>
-  ) : (
-''
-)}
+
 
       <ModalRoutingContext.Consumer>
       {({ modal, closeTo }) => (
@@ -119,9 +111,18 @@ const Layout = ({ children }) => {
 )}
 </ModalRoutingContext.Consumer>
 
-
+{showPWA ? (
+<>
+{!isRunningStandalone() && (
+<PwaInstaller />
+)}
+</>
+  ) : (
+''
+)}
 
       <header className="header" style={{ display: 'block', height: showNav ? '60px' : '0' }}>
+
         {showNav ? (
 
           <div id="menu" className="menu print panel1 header" style={{ position: 'fixed', width: '100vw', top: '0', zIndex: '30', maxHeight: '', overFlow: '', boxShadow: '0 0 0 rgba(0,0,0,.7)', padding: '0 2%', alignItems: 'start', borderRadius: '0', display: 'flex', justifyContent: 'space-around', gap: '10px', color: 'var(--theme-ui-colors-headerColorText)', borderBottom: '0px solid #222', }}>

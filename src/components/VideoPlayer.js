@@ -388,10 +388,10 @@ const VideoPlayer = ({ location }) => {
     className="youtubelinker"
     type="text"
     name="start"
-    value={startTime !== null ? parseFloat(startTime).toFixed(2) : ''}
+    value={isNaN(parseFloat(startTime)) ? '' : parseFloat(startTime).toFixed(2)}
     onChange={handleInputChange}
     onClick={handleStartFromPlayhead}
-    placeholder={startTime === null ? 'Start' : ''}
+    placeholder={!startTime && 'Start'} // Set placeholder to 'Start' if startTime is falsy
     disabled={!isVideoActive}
     style={{ maxWidth: '100px', fontSize: 'clamp(1rem,.8vw,1.3rem)', textAlign: 'center' }}
 />
@@ -401,13 +401,14 @@ const VideoPlayer = ({ location }) => {
     className="youtubelinker"
     type="text"
     name="stop"
-    value={stopTime !== null ? parseFloat(stopTime).toFixed(2) : ''}
+    value={isNaN(parseFloat(stopTime)) ? '' : parseFloat(stopTime).toFixed(2)}
     onChange={handleInputChange}
     onClick={handleEndFromPlayhead}
-    placeholder={stopTime === null ? 'Stop' : ''}
+    placeholder={!stopTime && 'Stop'} // Set placeholder to 'Stop' if stopTime is falsy
     disabled={!isVideoActive}
     style={{ maxWidth: '100px', fontSize: 'clamp(1rem,.8vw,1.4rem)', textAlign: 'center' }}
 />
+
 
 
                             </div>

@@ -10,6 +10,7 @@ const PWAInstaller = () => {
 
 
   const { companyname } = useSiteMetadata()
+  const { iconimage } = useSiteMetadata()
 
   useEffect(() => {
     const storedisInstalled = localStorage.getItem("isInstalled");
@@ -28,7 +29,7 @@ const PWAInstaller = () => {
 
   return (
     
-    <div id="pwabanner" style={{ display: isInstalled ? "none" : "flex",  alignItems:'center', fontSize: 'clamp(.9rem,2vw,1rem)', background:'var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColorText)' }}>
+    <div id="pwabanner" style={{position:'relative', top:'0', display: isInstalled ? "none" : "flex",  alignItems:'center', fontSize: 'clamp(.9rem,2vw,1rem)', background:'var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColorText)' }}>
 
       <button
         className="flag1 bug1"
@@ -38,9 +39,10 @@ const PWAInstaller = () => {
           cursor: "pointer",
           padding: "0",
           fontSize: "clamp(3rem, 3vw, 3rem)",
-          position: "relative",
+          position: "absolute",
           top: "20px",
-          width: "60px",
+          right: "0",
+          width: "",
           height: isInstalled ? "60px" : "60px",
           zIndex: "4",
           display: "flex",
@@ -60,13 +62,25 @@ const PWAInstaller = () => {
 
 
 
-      {/* <div style={{fontSize:'60px', display:'grid', placeContent:'center', height:'60px', margin:'0 2vw'}}>&#x2620;</div>  */}
+
+      {iconimage ? (
+                <img className="cornerlogo1" style={{ position: 'relative', top: '', left: '', border: '0px solid white', padding: '0', maxHeight: '60px' }} src={iconimage} alt={companyname} width="111" height="60" />
+              ) : (
+                <div style={{ fontWeight: '', display: 'grid', justifyContent: 'center', alignItems: 'center', height: '', fontSize: 'clamp(.9rem,2vw,1rem)', color: 'var(--theme-ui-colors-headerColorText)', maxWidth: '50vw' }}>
+                  {companyname}
+                </div>
+              )}
+
+
+
+
+      {/* <div style={{fontSize:'60px', display:'grid', placeContent:'center', height:'60px', margin:'0 2vw', lineHeight:'100%'}}>&#x2620;</div>  */}
 
                 <div className="font" style={{display:'flex', alignItems:'center', gap:'1vw'}}>
-                {/* INSTALL <span style={{textTransform:'uppercase'}}>{companyname}:</span> */}
                 Save to your Home Screen" to install {companyname}'s free Web App
                 </div>
   
+                
 
     
 
