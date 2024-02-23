@@ -199,11 +199,16 @@ const VideoPlayer = ({ location }) => {
         if (stopTime) {
             queryParams.set('stop', stopTime);
         }
+
+        
     
         const url = `${window.location.pathname}?${queryParams.toString()}`;
         copyToClipboard(url);
         handleShareButtonClick();
+
+        
     };
+
 
 
 
@@ -312,6 +317,7 @@ const VideoPlayer = ({ location }) => {
                                         type="checkbox"
                                         name="loop"
                                         checked={loop}
+                                        className="youtubelinker"
                                         onChange={handleInputChange}
                                         disabled={!isVideoActive}
                                         style={{maxWidth:'50px'}}
@@ -324,6 +330,7 @@ const VideoPlayer = ({ location }) => {
                                         type="checkbox"
                                         name="mute"
                                         checked={mute}
+                                        className="youtubelinker"
                                         onChange={handleInputChange}
                                         disabled={!isVideoActive}
                                         style={{maxWidth:'50px'}}
@@ -337,6 +344,7 @@ const VideoPlayer = ({ location }) => {
                                         id="controls-checkbox"
                                         type="checkbox"
                                         name="controls"
+                                        className="youtubelinker"
                                         checked={controls}
                                         onChange={handleInputChange}
                                         disabled={!isVideoActive}
@@ -350,6 +358,7 @@ const VideoPlayer = ({ location }) => {
         aria-label="Block user interactions"
         id="blocker-checkbox"
         type="checkbox"
+        className="youtubelinker"
         name="showBlocker"
         checked={showBlocker}
         onChange={handleBlockerChange}
@@ -362,6 +371,7 @@ const VideoPlayer = ({ location }) => {
     <input
         type="checkbox"
         id="autoplayCheckbox"
+        className="youtubelinker"
         checked={autoplay}
         onChange={(e) => setAutoplay(e.target.checked)}
         disabled={!isVideoActive}
@@ -413,7 +423,7 @@ const VideoPlayer = ({ location }) => {
                                 name="video"
                                 value={youtubelink}
                                 onChange={handleInputChange}
-                                style={{ padding: '.5vh 1vw', minWidth:'100px', width: '100%', maxWidth: '800px', fontSize: 'clamp(.8rem,1.5vw,2rem)', transition: 'all 1s ease-in-out' }}
+                                style={{ padding: '.5vh 1vw', minWidth:'100px', width: '100%', maxWidth: '800px', fontSize: 'clamp(.8rem,1.4vw,1rem)', transition: 'all 1s ease-in-out' }}
                                 placeholder="Paste Link To Video"
                                 className="youtubelinker"
                                 aria-label="Paste Link To Video"
