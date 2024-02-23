@@ -438,7 +438,7 @@ display:'flex', justifyContent:'center', maxHeight:'80px !important', height:'15
 <div className="post-container" style={{maxWidth:'100vw', overFlowY:'hidden', paddingTop: showNav ? '60px' : '',}}>
 
 {showVideoPlayer ? (
-<section id="VideoPlayer" name="VideoPlayer" className="print scroll-area" style={{  width:'100vw', height:'', margin:'0 auto 0 auto', position:'relative',alignContent:'center', maxWidth:'100vw', display:'flex', textAlign:'left', justifyContent:'start', verticalAlign:'center', fontSize:'clamp(1rem, 1.8vw, 3.2rem)',textShadow:'0 2px 7px #000',backgroundColor:'var(--theme-ui-colors-headerColor)'}}>
+<section id="VideoPlayer" name="VideoPlayer" className="print scroll-area" style={{  width:'100vw', height:'', margin:'0 auto 0 auto', position:'relative',alignContent:'center', maxWidth:'100vw', display:'flex', textAlign:'left', justifyContent:'start', verticalAlign:'center', backgroundColor:'var(--theme-ui-colors-headerColor)'}}>
 <YouTubePlayer location={location} />
 </section>
      ) : (
