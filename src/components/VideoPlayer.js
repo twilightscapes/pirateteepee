@@ -392,6 +392,7 @@ const VideoPlayer = ({ location }) => {
     name="hideEditor"
     className="youtubelinker"
     checked={hideEditor}
+    disabled={!!videoUrlParam}
     onChange={handleHideEditorChange}
 />
 </label>
