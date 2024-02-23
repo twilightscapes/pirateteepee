@@ -41,7 +41,8 @@
       "showFeature": false,
       "showResume": true,
       "showLocation": true,
-      "showPopup": false
+      "showPopup": false,
+      "showPWA": true
     },
     "magicOptions": {
       "showMagic": true,

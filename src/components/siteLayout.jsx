@@ -5,6 +5,7 @@ import "../styles/reset.css"
 import "../styles/global.css"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 // import { navigate } from "gatsby"
+// import { RiCloseCircleFill } from "react-icons/ri";
 import { Helmet } from "react-helmet"
 import Theme from "./theme"
 import SearchIcon from "../../src/img/search"
@@ -20,9 +21,19 @@ import userStyles from "../../static/data/userStyles.json"
 import Switch from "../components/Switch"
 import BlueCheck from './bluecheck';
 import Footer from "../components/footer"
+import PwaInstaller from "../components/PwaInstaller"
 
 const Layout = ({ children }) => {
   const [showBackToTop, setShowBackToTop] = useState(false);
+
+
+  function isRunningStandalone() {
+    if (typeof window !== 'undefined') {
+        return window.matchMedia('(display-mode: standalone)').matches;
+    }
+    return false;
+}
+
 
   const handleScroll = () => {
     const currentScrollPos = document.documentElement.scrollTop || document.body.scrollTop;
@@ -53,7 +64,7 @@ const Layout = ({ children }) => {
   const { dicSearch, dicPirate, dicGoBack } = language;
   const { showNav, showNav2 } = navOptions
   const { showfooter, showSwipe, showSearch } = featureOptions
-  const { showModals, showBranding, showConsent } = proOptions
+  const { showModals, showBranding, showConsent, showPWA } = proOptions
 
   const { companyname } = useSiteMetadata()
   const { iconimage } = useSiteMetadata()
@@ -61,8 +72,7 @@ const Layout = ({ children }) => {
 
   const fontUrl = `https://fonts.googleapis.com/css?family=${defaultColors?.siteFont}&display=swap`;
 
-  const bodyClass = typeof document !== 'undefined' && document.body.classList.contains('social') ? 'social' : 'default'; 
-
+  
   return (
     <>
       <Helmet>
@@ -83,24 +93,25 @@ const Layout = ({ children }) => {
 
       <Seo />
 
+{showPWA ? (
+<>
+{!isRunningStandalone() && (
+<PwaInstaller />
+)}
+</>
+  ) : (
+''
+)}
+
       <ModalRoutingContext.Consumer>
       {({ modal, closeTo }) => (
 <>
   {modal ? (
-
-
-<div style={{display:'flex', justifyContent: 'center', color: '#ccc',  position:'fixed', top:'60px', right:'1vw', padding:'0px', fontSize:'', opacity:'1 !important', zIndex:'10',}}>
+<div style={{display:'flex', justifyContent: 'center', color: '#ccc',  position:'fixed', top:'60px', right:'1vw', padding:'0px', fontSize:'', opacity:'1 !important', zIndex:'12',}}>
 <Link state={{noScroll: true }} to={closeTo} style={{fontSize:'',  textDecoration:'none', lineHeight:'', display:'flex', flexDirection:'column', color:'#fff', cursor:'pointer'}}>
 <button className="button" style={{ display: 'flex', justifyContent: 'center', padding:'0 .5vw' }}><span className="icon -left" style={{ paddingRight: '' }}><BiLeftArrow /></span> {" "}{dicGoBack}</button>
 </Link>
 </div>
-
-
-
-
-
-
-
   ) : (
 ''
   )}
@@ -128,7 +139,8 @@ const Layout = ({ children }) => {
             </Link>
 
             <ul className="topmenu" style={{ fontSize: 'clamp(.6rem, 1.6vw, 1.8rem)', textAlign: 'center', maxHeight: '', display: 'flex', justifyContent: 'space-between', gap: '4vw', alignItems: 'center', margin: '0 auto 0 auto', padding: '1.5vh 2% 0 2%', border: '0px solid white' }}>
-              <Menu bodyClass={bodyClass} />
+              <Menu />
+              <li key="demo"><Link to="/pirate">View Demo</Link></li>
             </ul>
 
             <div id="missioncontrol" className="missioncontrol sitecontrols" style={{ display: 'flex', justifyContent: 'space-around', fontSize: 'clamp(.8rem, 2.3vw, 2.5rem)', gap: '3vw', textAlign: 'center', maxHeight: '', alignItems: 'center', paddingTop: '5px' }}>

@@ -41,6 +41,7 @@ const useSiteMetadata = () => {
             ShowDisclaimer
             startUrl
             showFeature
+            showPWA
           }
           navOptions{
             showFooterMenu
