@@ -42,7 +42,7 @@
       "showResume": false,
       "showLocation": false,
       "showPopup": false,
-      "showPWA": false
+      "showPWA": true
     },
     "magicOptions": {
       "showMagic": false,
