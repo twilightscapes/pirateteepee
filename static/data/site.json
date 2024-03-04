@@ -24,9 +24,9 @@
       "showTitles": true,
       "showfooter": false,
       "showSocial": false,
-      "showVideoPlayer": true,
-      "showHomePosts": false,
-      "showProfile": false,
+      "showVideoPlayer": false,
+      "showHomePosts": true,
+      "showProfile": true,
       "showDefault": true,
       "showSwipe": true
     },
@@ -39,13 +39,13 @@
       "showConsent": false,
       "startUrl": "/",
       "showFeature": false,
-      "showResume": true,
-      "showLocation": true,
+      "showResume": false,
+      "showLocation": false,
       "showPopup": false,
-      "showPWA": true
+      "showPWA": false
     },
     "magicOptions": {
-      "showMagic": true,
+      "showMagic": false,
       "showMagicCat": true,
       "showMagicTag": true,
       "showMagicSearch": false
