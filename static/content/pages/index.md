@@ -81,7 +81,6 @@ draft: true
 spotlight: false
 comments: false
 shareable: false
-showPWA: false
 ---
 Pirate is your own <strong>Personal Web App(PWA)</strong>, 
 It works on any device, even your TV - NO App Store needed.
