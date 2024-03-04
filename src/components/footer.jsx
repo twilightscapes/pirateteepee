@@ -205,7 +205,7 @@ export default function Footer() {
 
 
 
-      <footer className="panel" style={{display:'flex', flexDirection:'column', zIndex:'', justifyContent:'end', padding:'0', marginTop:'0', width:'100vw',textAlign:'center', background:'var(--theme-ui-colors-headerColor)', paddingTop: showFooterMenu ? '100px' : '0'}}>
+      <footer className="panel" style={{display:'flex', flexDirection:'column', zIndex:'', justifyContent:'end', padding:'0 0 60px 0', marginTop:'0', width:'100vw',textAlign:'center', background:'var(--theme-ui-colors-headerColor)', paddingTop: showFooterMenu ? '100px' : '0'}}>
 
 {/* {showConsent ? (
     <Consent />
