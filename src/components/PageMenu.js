@@ -3,7 +3,7 @@ import { RiCloseCircleFill } from "react-icons/ri";
 import PirateLogo from "../img/logo.svg";
 import Flag from "../img/logo.svg";
 
-import { Link } from "gatsby";
+
 
 const MenuComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -77,7 +77,7 @@ const MenuComponent = () => {
               <br /><br />
               And it's completely FREE!
               <br />
-              <Link to="/about" state={{ modal: true }} className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid #ff0000' }}>About PIRATE</Link>
+              <a href="https://pirateweb.org/about" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid #ff0000' }}>About PIRATE</a>
             </div>
           </div>
           <div className="flexcheek mob2 print" style={{ position: "", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
@@ -89,7 +89,7 @@ const MenuComponent = () => {
               <br /><br />
               Combined into your own app
               <br />
-              <Link to="/install" state={{ modal: true }} className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid #ff0000' }}>Become a PIRATE!</Link>
+              <a href="https://pirateweb.org/install" className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid #ff0000' }}>Become a PIRATE!</a>
             </div>
           </div>
         </div>
