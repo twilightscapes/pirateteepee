@@ -65,9 +65,7 @@ const Layout = ({ children }) => {
   const { dicSearch, dicPirate, dicGoBack } = language;
   const { showNav, showNav2 } = navOptions
   const { showfooter, showSwipe, showSearch } = featureOptions
-  const { showModals, showBranding,
-    //  showConsent, 
-     showPWA } = proOptions
+  const { showModals, showBranding, showPWA } = proOptions
 
   const { companyname } = useSiteMetadata()
   const { iconimage } = useSiteMetadata()
