@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import useSiteMetadata from "../hooks/SiteMetadata";
 import { Link } from "gatsby"
 import Layout from "../components/siteLayout"
@@ -9,13 +9,59 @@ import userRssData from "../../static/data/userRss.json";
 // import useNetlifyIdentity from '../components/useNetlifyIdentity';
 import { RiMenuUnfoldFill, RiCloseCircleFill } from "react-icons/ri"
 
-export const Head = () => (
-  <>
-  <body className="social utilitypage" />
-  </>
-)
+import { Helmet } from "react-helmet"
 
-const AuthenticatedTimeline = () => {
+const AuthenticatedTimeline = ({ isSliderVisible }) => {
+
+
+
+// eslint-disable-next-line
+const [sliderVisible, setSliderVisible] = useState(true); 
+
+useEffect(() => {
+  // Check if window is defined to ensure it's running in a client-side environment
+  if (typeof window !== 'undefined') {
+    // Set the default visibility to true if localStorage value is not available
+    const storedSliderVisibility = localStorage.getItem("isSliderVisible");
+    const initialSliderVisible = storedSliderVisibility ? JSON.parse(storedSliderVisibility) : true;
+    // Set the initial visibility based on the prop or localStorage
+    setSliderVisible(isSliderVisible ?? initialSliderVisible);
+  }
+  return () => {
+    // Cleanup function if needed
+  };
+}, [isSliderVisible, setSliderVisible]); // Add setSliderVisible to the dependency array
+
+
+const scrollRef = useRef(null);
+const containerClass = isSliderVisible ? "slider" : "grid-container contentpanel";
+const handleScroll = (e) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Your scroll handling logic
+    };
+  
+    const currentScrollRef = scrollRef.current;
+  
+    if (currentScrollRef) {
+      currentScrollRef.addEventListener("scroll", handleScroll);
+    }
+  
+    return () => {
+      if (currentScrollRef) {
+        currentScrollRef.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [scrollRef]);
+
+
+
+
 
   const [storedFeedUrls, setStoredFeedUrls] = useState([]);
 
@@ -68,7 +114,7 @@ const AuthenticatedTimeline = () => {
 
 
 
-  const { showNav } = useSiteMetadata();
+  // const { showNav } = useSiteMetadata();
   const { showDates } = useSiteMetadata();
   const { postcount } = useSiteMetadata();
   const [feed, setFeed] = useState([]);
@@ -218,7 +264,9 @@ const AuthenticatedTimeline = () => {
   //     setNewFeedName("");
   //   }
   // };
-  
+
+
+    /* eslint-disable-next-line no-unused-vars */
   const uniqueSubscriptions = [...new Set(userSubscriptions.map(subscription => subscription.name))];
 
   const addSubscription = () => {
@@ -253,16 +301,20 @@ const AuthenticatedTimeline = () => {
   };
   
   
+
   
 
 
 return (
 <Layout>
-{showNav ? (
+<Helmet>
+        <body id="body" className="social" />
+      </Helmet>
+{/* {showNav ? (
     <div className="spacer" style={{ height: "70px", border: "0px solid yellow" }}></div>
   ) : (
     ""
-  )}
+  )} */}
 
 
 
@@ -275,7 +327,7 @@ return (
             zIndex: "4",
             left: "1vw",
             right: "",
-            display: "flex",
+            display: "none",
             justifyContent: "center",
             alignItems: "center",
             width: "auto",
@@ -303,7 +355,7 @@ return (
 
 <div className="flexbutt" style={{width:'100%', gap:'2vw'}}>
 
-<div className="contact-form flexcheek" style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', minWidth:'30vw' }}>
+{/* <div className="contact-form flexcheek" style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', minWidth:'30vw' }}>
 <h4>Add A Feed:</h4>
         <input
           type="text"
@@ -318,15 +370,15 @@ return (
           onChange={(e) => setNewFeedUrl(e.target.value)}
 />
 <button className="button" onClick={addSubscription}>Add Subscription</button>
-</div>
-<div className="flexcheek" style={{ minWidth: '', maxHeight: '40vh', overflow: 'scroll', border:'1px solid #333', padding:'100px 3% 0 3%', borderRadius:'8px', textAlign:'center', position:'relative' }}>
-<h3>Latest Feeds:</h3>
+</div> */}
+<div className="flexcheek" style={{ minWidth: '200px', maxHeight: '40vh', overflow: 'scroll', border:'1px solid #333', padding:'100px 3% 0 3%', borderRadius:'8px', textAlign:'center', position:'relative' }}>
+{/* <h3>Latest Feeds:</h3>
 
 <ul style={{display:'flex', flexDirection:'column'}}>
   {uniqueSubscriptions.map((subscription, index) => (
     <li key={index}>{subscription}</li>
   ))}
-</ul>
+</ul> */}
 
 
         <Link state={{modal: true}} to="/favorites" className="button" style={{position:'absolute',  top:'10px', left:'0', right:'0', width:'70%', margin:'0 auto'}} >Manage Feeds</Link>
@@ -381,8 +433,11 @@ return (
       ))}
     </div> */}
 
-<div className='contentpanel grid-container' style={{ marginTop: '5vh' }}>
-        <div className='sliderSpacer' style={{ height: '', paddingTop: '0', display: 'none' }}></div>
+
+
+<div className={containerClass} onWheel={handleScroll}
+      ref={scrollRef} style={{ marginTop: '5vh' }}>
+        {/* <div className='sliderSpacer' style={{ height: '', paddingTop: '0', display: 'none' }}></div> */}
 
 
 

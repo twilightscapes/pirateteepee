@@ -14,8 +14,9 @@ import { RiArrowUpFill } from "react-icons/ri"
 import GoBack from "../components/goBack"
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-4'
 import Menu from "../components/menu"
+import SocialMenu from "../components/menu-social"
 import { BiLeftArrow } from "react-icons/bi"
-import Consent from "../components/Consent"
+// import Consent from "../components/Consent"
 import defaultColors from "../../static/data/default-colors.json";
 import userStyles from "../../static/data/userStyles.json"
 import Switch from "../components/Switch"
@@ -64,13 +65,25 @@ const Layout = ({ children }) => {
   const { dicSearch, dicPirate, dicGoBack } = language;
   const { showNav, showNav2 } = navOptions
   const { showfooter, showSwipe, showSearch } = featureOptions
-  const { showModals, showBranding, showConsent, showPWA } = proOptions
+  const { showModals, showBranding,
+    //  showConsent, 
+     showPWA } = proOptions
 
   const { companyname } = useSiteMetadata()
   const { iconimage } = useSiteMetadata()
   const { image } = useSiteMetadata()
 
   const fontUrl = `https://fonts.googleapis.com/css?family=${defaultColors?.siteFont}&display=swap`;
+
+
+
+  // Determine the current page location
+  const currentPage = typeof window !== 'undefined' ? window.location.pathname : '/';
+  // console.log('Current Page:', currentPage);
+  
+
+  // Define an array of page locations where you want to show the social menu
+  const socialMenuPages = ['/pirate', '/feeds', '/favorites'];
 
   
   return (
@@ -111,15 +124,7 @@ const Layout = ({ children }) => {
 )}
 </ModalRoutingContext.Consumer>
 
-{showPWA ? (
-<>
-{!isRunningStandalone() && (
-<PwaInstaller />
-)}
-</>
-  ) : (
-''
-)}
+
 
       <header className="header" style={{ display: 'block', height: showNav ? '60px' : '0' }}>
 
@@ -140,8 +145,13 @@ const Layout = ({ children }) => {
             </Link>
 
             <ul className="topmenu" style={{ fontSize: 'clamp(.6rem, 1.6vw, 1.8rem)', textAlign: 'center', maxHeight: '', display: 'flex', justifyContent: 'space-between', gap: '4vw', alignItems: 'center', margin: '0 auto 0 auto', padding: '1.5vh 2% 0 2%', border: '0px solid white' }}>
-              <Menu />
-              <li key="demo"><Link to="/pirate">View Demo</Link></li>
+
+
+
+            {socialMenuPages.some(page => currentPage.startsWith(page)) ? <SocialMenu /> : <Menu />}
+
+
+              {/* <li key="demo"><Link to="/pirate">View Demo</Link></li> */}
             </ul>
 
             <div id="missioncontrol" className="missioncontrol sitecontrols" style={{ display: 'flex', justifyContent: 'space-around', fontSize: 'clamp(.8rem, 2.3vw, 2.5rem)', gap: '3vw', textAlign: 'center', maxHeight: '', alignItems: 'center', paddingTop: '5px' }}>
@@ -178,12 +188,13 @@ const Layout = ({ children }) => {
 
 
 
-      <main id="top" name="top">
+      <main id="top" name="top" style={{height:'',}}>
         {children}
+
       <div className={`upbar button ${showBackToTop ? 'visible' : ''}`}
         style={{
           position: 'fixed',
-          bottom: '20px',
+          bottom: '80px',
           zIndex: '60',
           left: '',
           right: '1vw',
@@ -199,7 +210,7 @@ const Layout = ({ children }) => {
           textShadow: '0 1px 1px rgba(0, 0, 0, .7)',
           fontSize: '',
           verticalAlign: 'center',
-          transform: showBackToTop ? 'translateY(0)' : 'translateY(200%)',
+          transform: showBackToTop ? 'translateY(0)' : 'translateY(300%)',
         }}
       >
         <AnchorLink
@@ -218,8 +229,19 @@ const Layout = ({ children }) => {
           </div>
         </AnchorLink>
       </div>
+
+      {showPWA ? (
+<>
+{!isRunningStandalone() && (
+<PwaInstaller />
+)}
+</>
+  ) : (
+''
+)}
       </main>
 
+      
       {showfooter ? (
     <Footer />
       ) : (
@@ -253,11 +275,15 @@ const Layout = ({ children }) => {
         ""
       )}
 
-      {showConsent ? (
-        <Consent />
+
+
+      {/* {showConsent ? (
+        <div style={{display:'flex', placeContent:'', position:'absolute', width:'100vw', margin:'0 auto', height:'100%', top:'50%', left:'', right:'', zIndex:'2', border:'0px solid blue'}}>
+          <Consent />
+          </div>
       ) : (
         ""
-      )}
+      )} */}
 
 
 
@@ -296,7 +322,8 @@ const Layout = ({ children }) => {
                 </AnchorLink>
               </li>
 
-              <Menu id="sidechick" />
+              {/* <Menu id="sidechick" /> */}
+              {socialMenuPages.some(page => currentPage.startsWith(page)) ? <SocialMenu id="sidechick" /> : <Menu id="sidechick" />}
 
               <li>
                 <ul className="missioncontrol sitecontrols" style={{ display: 'flex', justifyContent: 'space-around', fontSize: 'clamp(.8rem, 2.3vw, 2.5rem)', gap: '', textAlign: 'center', maxHeight: '', alignItems: 'center', paddingTop: '5px' }}>

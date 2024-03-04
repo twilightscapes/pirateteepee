@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RiCloseCircleFill } from "react-icons/ri";
+import { MdOutlineIosShare } from "react-icons/md";
 // import PirateLogo from "../img/logo.svg";
 // import Flag from "../img/logo.svg";
 import useSiteMetadata from "../hooks/SiteMetadata"
@@ -29,7 +30,7 @@ const PWAInstaller = () => {
 
   return (
     
-    <div id="pwabanner" style={{position:'relative', top:'0', display: isInstalled ? "none" : "flex",  alignItems:'center', fontSize: 'clamp(.9rem,2vw,1rem)', background:'var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColorText)' }}>
+    <div id="pwabanner" style={{position:'fixed', bottom:'0', display: isInstalled ? "none" : "flex",  alignItems:'center', fontSize: 'clamp(.9rem,2vw,1rem)', background:'var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColorText)', marginBottom:'0px', padding:'0px 40px 15px 0', width:'100vw', zIndex:'10' }}>
 
       <button
         className="flag1 bug1"
@@ -40,8 +41,8 @@ const PWAInstaller = () => {
           padding: "0",
           fontSize: "clamp(3rem, 3vw, 3rem)",
           position: "absolute",
-          top: "20px",
-          right: "0",
+          top: "24px",
+          right: "-10px",
           width: "",
           height: isInstalled ? "60px" : "60px",
           zIndex: "4",
@@ -76,9 +77,19 @@ const PWAInstaller = () => {
 
       {/* <div style={{fontSize:'60px', display:'grid', placeContent:'center', height:'60px', margin:'0 2vw', lineHeight:'100%'}}>&#x2620;</div>  */}
 
-                <div className="font" style={{display:'flex', alignItems:'center', gap:'1vw'}}>
-                Save to your Home Screen" to install {companyname}'s free Web App
+                <div className="font" style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'1vw', textAlign:'center', justifyContent:'center',padding:'4px 0 0 40px', margin:'0 auto', border:'0px solid blue', width:'', maxWidth:'', fontSize: 'clamp(.8rem,1.2vw,1rem)', position:'relative'}}>
+
+                <span style={{position:'absolute', display:'block', left:'1%',}}><MdOutlineIosShare style={{fontSize:'30px'}} /></span>
+
+                  <span style={{display:'block'}}>Install the {companyname} Web app</span>
+
+                  <span style={{display:'block'}}>"Save to your Home Screen"</span>
+
+                
+
                 </div>
+                
+                
   
                 
 

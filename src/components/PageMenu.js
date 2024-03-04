@@ -53,7 +53,7 @@ const MenuComponent = () => {
         style={{
           position: "absolute",
           zIndex: "3",
-          top: "80px",
+          top: "100px",
           gap: "0",
           padding: "2vh 2vw",
           alignItems: "center",
@@ -71,25 +71,25 @@ const MenuComponent = () => {
           <div className="flexcheek mob2 print" style={{ position: "", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
             <div className="nameblock font" style={{ margin: "0 auto 0 auto", padding: "0 0 0 0", alignContent: "center", display: "grid", textAlign: "center", justifyContent: "center", verticalAlign: "center", color: "#fff", paddingTop: "", fontSize: "clamp(1rem, 1.4vw, 3.2rem)", background: "rgba(0,0,0,0.50)", backdropFilter: "blur(8px)", border: "10px double var(--theme-ui-colors-buttonHoverBg)", borderRadius: "var(--theme-ui-colors-borderRadius)", textShadow: "0 2px 0px #000", maxWidth: "" }}>
               <br />
-              <span style={{ margin: "2vh auto", fontSize: "160%" }}>PIRATE</span>
+              <span style={{ margin: "2vh auto", fontSize: "160%" }}>About PIRATE</span>
               <br />
               A web revolution is coming
               <br /><br />
               And it's completely FREE!
               <br />
-              <Link to="/install" state={{ modal: true }} className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto" }}>Become a PIRATE!</Link>
+              <Link to="/about" state={{ modal: true }} className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid #ff0000' }}>About PIRATE</Link>
             </div>
           </div>
           <div className="flexcheek mob2 print" style={{ position: "", top: "", minWidth: "25vw", overflow: "", marginBottom: "", paddingTop: "", borderRadius: "var(--theme-ui-colors-borderRadius)" }}>
             <div className="nameblock font" style={{ margin: "0 auto 0 auto", padding: "0 0 0 0", alignContent: "center", display: "grid", textAlign: "center", justifyContent: "center", verticalAlign: "center", color: "#fff", paddingTop: "", fontSize: "clamp(1rem, 1.4vw, 3.2rem)", background: "rgba(0,0,0,0.50)", backdropFilter: "blur(8px)", border: "10px double var(--theme-ui-colors-buttonHoverBg)", borderRadius: "var(--theme-ui-colors-borderRadius)", textShadow: "0 2px 0px #000", maxWidth: "" }}>
               <br />
-              <span style={{ margin: "2vh auto", fontSize: "160%" }}>PIRATE+</span>
+              <span style={{ margin: "2vh auto", fontSize: "160%" }}>Get PIRATE</span>
               <br />
               Web, Social &amp; Video Media
               <br /><br />
               Combined into your own app
               <br />
-              <Link to="/contact" state={{ modal: true }} className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto" }}>Get PIRATE+ Now</Link>
+              <Link to="/install" state={{ modal: true }} className="button print" style={{ display: "flex", justifyContent: "center", padding: "1vh .5vw", maxWidth: "250px", margin: "30px auto", border:'1px solid #ff0000' }}>Become a PIRATE!</Link>
             </div>
           </div>
         </div>

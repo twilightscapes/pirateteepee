@@ -38,9 +38,11 @@ body.install #menu, body.install #gobacker, body.install .spacer  {display:none 
 body.contactpage #footercontact{display:none;}
 
 /* body.piratepage .missioncontrol{visibility:hidden !important;} */
-body.piratepage #gobacker, body.social #gobacker{visibility:hidden !important;}
+body.piratepage #gobacker{visibility:hidden !important;}
 /* body.piratepage :is(#gobacker) {display: none !important;} */
 body.piratepage footer {display: none !important;}
+
+body.social .searchIcon {visibility:hidden !important;}
 
 :root{--button-alternate-color:#e3272d;--button-color:#e5c3d3;--font-family:-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,Ubuntu,roboto,noto,segoe ui,arial,sans-serif;--font-family-mono:Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;--font-size-small:12px;--grid-gap:30px;--home-link-color:#d4d4d4;--home-link-hover-color:var(--primary-color);--input-focus-border:#83aaac;--label-text:#777;--nav-link-hover-bg:#111;--post-link-color:#0f070b;--text-color-meta:rgba(0,0,0,.5), height:100vh;}
 
@@ -635,7 +637,7 @@ body.homepage .pleaseshare{display:none}
 
 .sidebarMenuInner{
   background-color:var(--theme-ui-colors-headerColor);
-  filter:brightness(.7);
+  /* filter:brightness(.7); */
 }
 
 .sidebarMenuInner li{
@@ -936,6 +938,9 @@ button:disabled{
     margin:0 auto !important;
     /* height: 100% !important; */
   }
+
+
+  #bigbox {flex-wrap: wrap;}
 
   /* .player-wrapper .menusnapp{top:72% !important;} */
 
@@ -1315,21 +1320,51 @@ html:has body.youtube{position:fixed !important; overflow: hidden !important;}
   body.youtube .upbar 
   {display: none !important;}
 
-.blocked-video::before{
+  #youtubelink-input::placeholder{color:var(--theme-ui-colors-siteColor) !important;}
+  body.homepage .public{display: flex !important;}
+
+  /* body.youtube #gobacker{top:14% !important; right:5px !important;} */
+
+  @media(max-width:48rem) {
+    body.youtube #PiratePlayer {top:60px !important;}
+  }
+
+#PiratePlayer .blocked-video::before{
   content:"Pirate Video Pro";
     position: fixed;
-    top: 60px;
+    /* top: 60px; */
     left: 0;
     width: 100vw;
     height: 99%;
-    z-index: 5;
+    z-index: 100000;
     display:grid;
     place-content: center;
-    border:0px solid yellow !important;
+    border:20px solid yellow !important;
     background:transparent;
     background-size: cover;
     font-size: clamp(2rem,3vw,3rem);
 }
+
+
+.youtubelinker.expanded {
+  width: 80%;
+  position: absolute;
+  left: 10%;
+}
+
+@media (max-width:48rem) {
+#seoTitle{
+  width: 100% !important;
+  background: rgba(0,0,0,1) !important;
+  position:relative !important;
+  top: inherit !important;
+  left: inherit !important;
+  border: inherit !important;
+}
+  }
+
+
+
 /* .blocked-video{border:2px solid red !important;} */
 
 
@@ -1351,11 +1386,9 @@ html:has body.youtube{position:fixed !important; overflow: hidden !important;}
     background-size: cover;  
 } */
 
-
-input {
-    font-size: 16px !important;
-}
-
+/* SAFARI INPUT ZOOM FIX */
+input {font-size: 16px !important;}
+/* SAFARI INPUT ZOOM FIX */
 
   /* html, body.youtube {
     touch-action: manipulation;
@@ -1372,8 +1405,8 @@ input {
 
 
 
-/* .pagemenu button.flag svg{color:#000 !important;} */
 
+/* .pagemenu button.flag svg{color:#000 !important;} */
 
 
 
@@ -1395,6 +1428,7 @@ body.youtube .player-wrapper {max-height: 100dvh;}
 .player-wrapper iframe{max-height: 100%; overflow:hidden; object-fit:contain;  margin:0 auto; aspect-ratio: 16/9;}
 
 
+
 /* #pwabanner {
   opacity: 0;
   overflow: hidden;
@@ -1406,9 +1440,6 @@ body.youtube .player-wrapper {max-height: 100dvh;}
     opacity:100;
   }
 } */
-
-
-
 
 
 
@@ -1447,8 +1478,8 @@ margin: 0 auto;
 } */
 
 .youtubelinker {
-  background: var(--theme-ui-colors-headerColor);
-  padding: .2vh 0.5vw;
+  /* background: var(--theme-ui-colors-headerColor); */
+  /* padding: .2vh 0.5vw; */
   /* min-width: 200px; */
   outline: 1px solid #999;
   border-radius: var(--theme-ui-colors-borderRadius);

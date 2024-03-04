@@ -21,7 +21,7 @@ function Pirate() {
 <Helmet>
 
   
-        <body id="body" className="piratepage scroll" />
+        <body id="body" className="piratepage scroll social" />
       </Helmet>
 
 
