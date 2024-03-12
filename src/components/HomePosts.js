@@ -305,7 +305,7 @@ const [playingIndex, setPlayingIndex] = useState(null);
 
   {node.frontmatter.externalLink ? (
 
-    <iframe loading="lazy" id="" style={{width:'100%', minWidth:'', maxHeight:'80vh', margin:'0 auto'}} title="iFrame" className="iframe boom" width="980" height="550" src={node.frontmatter.externalLink} frameBorder="0" allowFullScreen></iframe>
+    <iframe loading="lazy" id="" style={{width:'100%', minWidth:'350px', maxHeight:'80vh', margin:'0 auto'}} title="iFrame" className="iframe boom" width="980" height="550" src={node.frontmatter.externalLink} frameBorder="0" allowFullScreen></iframe>
     
 
     ) : (

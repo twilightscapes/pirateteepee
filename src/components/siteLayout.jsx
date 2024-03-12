@@ -124,7 +124,7 @@ const Layout = ({ children }) => {
 
 
 
-      <header className="header" style={{ display: 'block', height: showNav ? '60px' : '0' }}>
+      <header className="header" style={{ display: 'block', height: showNav === true || socialMenuPages.some(page => currentPage.startsWith(page)) || showNav !== false ? '60px' : '0' }}>
 
       {(showNav === true || socialMenuPages.some(page => currentPage.startsWith(page)) || showNav !== false) ? (
 
@@ -325,7 +325,7 @@ const Layout = ({ children }) => {
               </li>
 
               {/* <Menu id="sidechick" /> */}
-              {socialMenuPages.some(page => currentPage.startsWith(page)) ? <SocialMenu id="sidechick" /> : <Menu id="sidechick" />}
+              <Menu id="sidechick" />
 
               <li>
                 <ul className="missioncontrol sitecontrols" style={{ display: 'flex', justifyContent: 'space-around', fontSize: 'clamp(.8rem, 2.3vw, 2.5rem)', gap: '', textAlign: 'center', maxHeight: '', alignItems: 'center', paddingTop: '5px' }}>
