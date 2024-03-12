@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import AuthenticatedTimeline from "../components/AuthenticatedTimeline";
+import AuthenticatedTimeline from "../../components/AuthenticatedTimeline";
 import { useStaticQuery, graphql } from "gatsby";
-import useSiteMetadata from "../hooks/SiteMetadata";
+import useSiteMetadata from "../../hooks/SiteMetadata";
 
 const TimeLine = () => {
 
