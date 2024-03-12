@@ -1169,7 +1169,13 @@ iframe.virtualtour{
 }
 
 
+.slider .boom{min-width:90vw !important; border:0px solid red !important;}
 
+
+
+/* @media(min-width:48em) {
+  .slider iframe{width:100vw !important;}
+  } */
 
 
 @media(max-width:48rem) {
