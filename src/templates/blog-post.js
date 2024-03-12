@@ -917,7 +917,16 @@ const YouTube = frontmatter.youtube.youtuber
 
         
 
+{frontmatter.externalLink ? (
 
+<iframe loading="lazy" id="" style={{width:'100%', minWidth:'', maxHeight:'', margin:'0 auto', }} title="iFrame" className="iframe boom" width="980" height="550" src={frontmatter.externalLink} frameBorder="0" allowFullScreen></iframe>
+
+
+) : (
+
+  ""
+
+)}
 
 
 <div className="wrap-element effects" style={hasYoutubeFrontmatter ? {aspectRatio:'16/9'} : {}}>
@@ -1526,6 +1535,7 @@ query BlogPostQuery($id: String!) {
       description
       showZoom
       showPageNav
+      externalLink
       youtube {
         youtuber
         youtuber2
