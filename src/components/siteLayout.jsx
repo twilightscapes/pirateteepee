@@ -81,10 +81,8 @@ const Layout = ({ children }) => {
   // Determine the current page location
   const currentPage = typeof window !== 'undefined' ? window.location.pathname : '/';
   // console.log('Current Page:', currentPage);
-  
-
   // Define an array of page locations where you want to show the social menu
-  const socialMenuPages = ['/pirate', '/feeds', '/favorites'];
+  const socialMenuPages = ['/pirate', '/pirate/feeds', '/pirate/explore', '/pirate/favorites'];
 
   
   return (
@@ -97,10 +95,7 @@ const Layout = ({ children }) => {
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link id="yyy" rel="stylesheet" href={fontUrl} crossOrigin="anonymous" referrerPolicy="no-referrer-when-downgrade" />
-        
-        {/* .ReactModal__Content{opacity:.99} */}
         <style>{`
-    
           ${userStyles.userStyles}
         `}</style>
 
@@ -131,7 +126,7 @@ const Layout = ({ children }) => {
 
       <header className="header" style={{ display: 'block', height: showNav ? '60px' : '0' }}>
 
-        {showNav ? (
+      {(showNav === true || socialMenuPages.some(page => currentPage.startsWith(page)) || showNav !== false) ? (
 
           <div id="menu" className="menu print panel1 header" style={{ position: 'fixed', width: '100vw', top: '0', zIndex: '30', maxHeight: '', overFlow: '', boxShadow: '0 0 0 rgba(0,0,0,.7)', padding: '0 2%', alignItems: 'start', borderRadius: '0', display: 'flex', justifyContent: 'space-around', gap: '10px', color: 'var(--theme-ui-colors-headerColorText)', borderBottom: '0px solid #222', }}>
 
