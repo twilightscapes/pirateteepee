@@ -169,7 +169,9 @@ const Layout = ({ children }) => {
                 <Theme style={{}} />
               </div>
 
-              {showSwipe ? (
+
+
+              {showSwipe === true || socialMenuPages.some(page => currentPage.startsWith(page)) || showSwipe !== false ? (
                 <Switch />
               ) : (
                 ""

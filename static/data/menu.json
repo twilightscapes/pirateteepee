@@ -3,14 +3,6 @@
     {
       "menutitle": "View by Category",
       "url": "/category"
-    },
-    {
-      "menutitle": "View by Tag",
-      "url": "/tags"
-    },
-    {
-      "menutitle": "View Archives",
-      "url": "/archive"
     }
   ]
 }
