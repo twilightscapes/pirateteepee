@@ -27,8 +27,8 @@ const HomePosts = ({ isSliderVisible }) => {
   const data = useStaticQuery(graphql`
   query ($homecount: Int) {
     allMarkdownRemark(
-      sort: [{ frontmatter: { spotlight: ASC } }, { frontmatter: { date: DESC } }]
-      filter: { frontmatter: { template: { eq: "blog-post" }, draft: { ne: true } } }
+      sort: {frontmatter: {date: DESC}}
+      filter: {frontmatter: {template: {eq: "blog-post"}, draft: {ne: true}}}
       limit: $homecount
     ) {
       edges {
@@ -146,19 +146,42 @@ const { dicLoadMore, dicCategory, dicKeyword, dicSearch, dicClear, dicResults, d
   const allTagsSet = new Set(allPosts.flatMap(({ node }) => node.frontmatter.tags || []));
   const allTags = Array.from(allTagsSet);
 
-  const filteredPosts = allPosts.filter(({ node }) => {
-    const { title, tags, category: categories, spotlight } = node.frontmatter;
+
+
+
+
+
+  const spotlightTruePosts = allPosts.filter(({ node }) => node.frontmatter.spotlight === true);
+  const filteredPosts = allPosts
+  .filter(({ node }) => {
+    const { title, tags, category: categories } = node.frontmatter; // Remove the spotlight declaration
     const titleMatch = query === "" || title.toLowerCase().includes(query.toLowerCase());
     const categoryMatch = selectedCategory === "" || (Array.isArray(categories) && categories.includes(selectedCategory));
     const tagMatch = selectedTag === "" || (tags && Array.isArray(tags) && tags.includes(selectedTag));
-  
-    // Check if spotlight is explicitly set to false or is undefined
-    if (spotlight === false || spotlight === undefined) {
-      return false; // Exclude posts with spotlight: false
-    }
-  
     return titleMatch && categoryMatch && tagMatch;
-  });
+  })
+    .sort((a, b) => {
+      if (a.node.frontmatter.spotlight === b.node.frontmatter.spotlight) {
+        return new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date);
+      } else {
+        return a.node.frontmatter.spotlight ? -1 : 1;
+      }
+    });
+  
+  // Prepend posts with spotlight: true to the filteredPosts array
+  filteredPosts.unshift(...spotlightTruePosts.filter(post => !filteredPosts.includes(post)));
+  
+  
+
+
+
+
+  
+  
+  
+  
+  
+  
   
   
 
@@ -464,17 +487,20 @@ const [playingIndex, setPlayingIndex] = useState(null);
                     <select
                       value={selectedCategory}
                       onChange={handleCategoryChange}
-                      style={{
-                        background: 'var(--theme-ui-colors-siteColor)',
-                        color: 'var(--theme-ui-colors-siteColorText)',
-                        borderRadius: 'var(--theme-ui-colors-borderRadius)',
-                        minWidth: '85px',
-                        maxWidth: '20%',
-                        overflow: 'hidden',
-                        height: '',
-                        lineHeight: '100%',
-                        padding: '5px 2px',
-                      }}
+                      style={{ padding: '.5vh .2vw', minWidth:'75px', width: '100%', maxWidth: '500px', textAlign:'center', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', background:'rgba(0,0,0,.2)', outline:'1px solid #999', border:'0px solid var(--theme-ui-colors-siteColor)', borderRadius: 'var(--theme-ui-colors-borderRadius)'
+                      // color:'var(--theme-ui-colors-siteColor)' 
+                    }}
+                      // style={{
+                      //   background: 'var(--theme-ui-colors-siteColor)',
+                      //   color: 'var(--theme-ui-colors-siteColorText)',
+                      //   borderRadius: 'var(--theme-ui-colors-borderRadius)',
+                      //   minWidth: '85px',
+                      //   maxWidth: '20%',
+                      //   overflow: 'hidden',
+                      //   height: '',
+                      //   lineHeight: '100%',
+                      //   padding: '5px 2px',
+                      // }}
                       aria-label="Select Category"
                       id="categoryselect"
                     >
@@ -496,17 +522,20 @@ const [playingIndex, setPlayingIndex] = useState(null);
     id="tagselect"
     value={selectedTag}
     onChange={handleTagChange}
-    style={{
-      background: 'var(--theme-ui-colors-siteColor)',
-      color: 'var(--theme-ui-colors-siteColorText)',
-      borderRadius: 'var(--theme-ui-colors-borderRadius)',
-      minWidth: '85px',
-      maxWidth: '30%',
-      overflow: 'hidden',
-      height: '',
-      lineHeight: '100%',
-      padding: '5px 2px',
-    }}
+    style={{ padding: '.5vh .2vw', minWidth:'75px', width: '100%', maxWidth: '500px', textAlign:'center', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', background:'rgba(0,0,0,.2)', outline:'1px solid #999', border:'0px solid var(--theme-ui-colors-siteColor)', borderRadius: 'var(--theme-ui-colors-borderRadius)' 
+    // color:'var(--theme-ui-colors-siteColor)' 
+  }}
+    // style={{
+    //   background: 'var(--theme-ui-colors-siteColor)',
+    //   color: 'var(--theme-ui-colors-siteColorText)',
+    //   borderRadius: 'var(--theme-ui-colors-borderRadius)',
+    //   minWidth: '85px',
+    //   maxWidth: '30%',
+    //   overflow: 'hidden',
+    //   height: '',
+    //   lineHeight: '100%',
+    //   padding: '5px 2px',
+    // }}
     aria-label="Select Keyword"
   >
     <option value="">{dicKeyword}</option>
@@ -529,19 +558,9 @@ const [playingIndex, setPlayingIndex] = useState(null);
                       type="text"
                       placeholder={dicSearch + ":"}
                       onChange={handleSearch}
-                      style={{
-                        width: '',
-                        background: 'var(--theme-ui-colors-siteColor)',
-                        color: 'var(--theme-ui-colors-siteColorText)',
-                        marginRight: '',
-                        borderRadius: 'var(--theme-ui-colors-borderRadius)',
-                        height: '',
-                        lineHeight: '100%',
-                        padding: '6px 6px',
-                        minWidth: '85px',
-                        maxWidth: '35%',
-                      }}
+                      style={{ padding: '.2vh .2vw', minWidth:'75px', width: '100%', maxWidth: '500px', textAlign:'center', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', background:'rgba(0,0,0,.1)', outline:'1px solid #999', border:'0px solid var(--theme-ui-colors-siteColor)',  borderRadius: 'var(--theme-ui-colors-borderRadius)', color:'inherit' }}
                       aria-label="Search"
+                      className="youtubelinker"
                     />
                   
                 </>
@@ -554,7 +573,7 @@ const [playingIndex, setPlayingIndex] = useState(null);
                       style={{
                         width: '',
                         background: 'var(--theme-ui-colors-siteColor)',
-                        color: 'var(--theme-ui-colors-siteColorText)',
+                        // color: 'var(--theme-ui-colors-siteColorText)',
                         marginRight: '',
                         borderRadius: 'var(--theme-ui-colors-borderRadius)',
                         height: '',
@@ -578,8 +597,8 @@ const [playingIndex, setPlayingIndex] = useState(null);
                   position: '',
                   right: '',
                   top: '',
-                  background: 'var(--theme-ui-colors-siteColor)',
-                  color: 'var(--theme-ui-colors-siteColorText)',
+                  // background: 'var(--theme-ui-colors-siteColor)',
+                  // color: 'var(--theme-ui-colors-siteColorText)',
                   textAlign: 'center',
                   fontSize: '10px',
                   maxWidth: '',

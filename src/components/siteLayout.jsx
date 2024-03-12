@@ -24,6 +24,7 @@ import BlueCheck from './bluecheck';
 import Footer from "../components/footer"
 import PwaInstaller from "../components/PwaInstaller"
 
+
 const Layout = ({ children }) => {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
@@ -102,6 +103,8 @@ const Layout = ({ children }) => {
     
           ${userStyles.userStyles}
         `}</style>
+
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Helmet>
 
       <Seo />
@@ -189,6 +192,10 @@ const Layout = ({ children }) => {
 
 
       <main id="top" name="top" style={{height:'',}}>
+
+      
+
+      
         {children}
 
       <div className={`upbar button ${showBackToTop ? 'visible' : ''}`}
@@ -240,7 +247,7 @@ const Layout = ({ children }) => {
 ''
 )}
       </main>
-
+    
       
       {showfooter ? (
     <Footer />

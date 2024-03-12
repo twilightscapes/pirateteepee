@@ -389,7 +389,7 @@ const handleAutoplayChange = (event) => {
     // JSX rendering
     return (
         <>
-              <div id="c" className='player-wrapper' style={{ display: 'grid', placeContent: '', height:'auto',  width: '100vw', transition: 'all .4s ease-in-out' }}>
+              <div id="piratevideo" className='player-wrapper' style={{ display: 'grid', placeContent: '', height:'auto',  width: '100vw', transition: 'all .4s ease-in-out' }}>
 
 
 
@@ -417,7 +417,7 @@ const handleAutoplayChange = (event) => {
         // transform: hideEditor ? 'translateY(-100%)' : 'none',
         transition: 'transform 0.5s ease-in-out',
         background: 'var(--theme-ui-colors-headerColor)',
-        color:'--theme-ui-colors-headerColorText'
+        // color:'--theme-ui-colors-headerColorText'
         
         // height: hideEditor ? '0' : 'auto'
 
@@ -434,7 +434,7 @@ const handleAutoplayChange = (event) => {
   alignItems: 'center',
   width: '', 
   transition: 'opacity .5s ease-in-out',
-  opacity: isVideoActive ? 1 : 0.5 
+  opacity: isVideoActive ? 1 : 0.7 
 }}>
 
 <div id="checkboxes" style={{ display: 'flex', flexDirection:'row', gap: '5px', alignItems: 'center', padding:'0 5px 5px 10px', justifyContent:'center', background:'rgba(0,0,0,.1)', outline:'1px solid #777', borderRadius:'var(--theme-ui-colors-borderRadius)', fontSize:'clamp(.5rem,1.2vw,1rem)'  }}>
@@ -524,7 +524,8 @@ const handleAutoplayChange = (event) => {
                 maxWidth: '800px',
                 textAlign: 'center',
                 fontSize: 'clamp(.8rem,1.4vw,1rem)',
-                background: expanded ? 'rgba(0,0,0,.6)' : 'rgba(0,0,0,1)',
+                background: expanded ? 'rgba(0,0,0,.8)' : 'rgba(0,0,0,.1)',
+                color: expanded ? '#fff' : 'inherit',
                 position: expanded ? 'absolute' : 'static',
                 top: expanded ? '60px' : 'inherit',
                 left: expanded ? 'auto' : 'auto',
@@ -697,7 +698,7 @@ const handleAutoplayChange = (event) => {
     ) : (
 
 
-<div className="font public" style={{display: hideEditor ? 'flex' : 'flex', position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '', transition: 'all .4s ease-in-out', 
+<div className="font public" style={{display: hideEditor ? 'none' : 'flex', position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '', transition: 'all .4s ease-in-out', 
 // height: hideEditor ? '0' : '50px', 
 // background: 'var(--theme-ui-colors-headerColor)',
  }}>
