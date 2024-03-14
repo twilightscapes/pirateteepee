@@ -334,8 +334,15 @@ body.social .grid-container {
   display: grid;
   list-style: none;
   column-gap: 3vw;
+  row-gap: 25vh;
   padding: 0 3% 0 3%;
 }
+
+body.social .slider .post-card1 img{
+  max-height: 60vh ;
+  margin:0 auto;
+  /* border: 2px solid blue !important; */
+  }
 
 /* body.homepage .grid-container .post-card1:last-child {
   width: 94vw;
