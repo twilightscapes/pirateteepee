@@ -44,7 +44,7 @@ const ShareAlt = () => {
         <p className="font pleaseshare" style={{ margin: "1vh auto", textAlign: "center", fontSize: "90%", fontWeight:'bold' }}>Please Share:</p>
         <div style={{ background: "transparent", borderRadius: "var(--theme-ui-colors-borderRadius)", width: "400px", color: "", fill: "", padding: " 0", display: "flex", flexDirection: "row", justifyContent: "space-around", alignItems: "center", margin: "0 auto" }}>
           {/* Input field to display and copy URL */}
-          <div style={{ display: "flex", gap:'2vw', flexDirection: "", alignItems: "center"}}>
+          <div style={{ display: "flex", gap:'2vw', flexDirection: "", alignItems: "center", padding:'0 3%'}}>
             <input className="youtubelinker" type="text" value={siteUrl + pathname} readOnly style={{ padding: '.5vh .5vw', minWidth:'305px', width: '100%', maxWidth: '400px', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all 1s ease-in-out', background:'rgba(0,0,0,.2)', outline:'1px solid #999', border:'0px solid var(--theme-ui-colors-siteColor)' }} />
 
             <button className="button non" aria-label="Copy Url" onClick={handleCopy} style={{ display: "flex", gap: '.5vw', justifyContent: "center", padding: ".6vh .8vw", width:'100px', minWidth:'30px', maxHeight: "", margin: "0 auto", textAlign: 'center', fontSize: '14px', fontWeight: 'light', textShadow: '0 1px 0 #444', marginLeft:'', }}>{copied ? "Copied" : "Copy"}</button>
