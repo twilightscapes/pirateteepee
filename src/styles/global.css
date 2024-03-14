@@ -1170,7 +1170,7 @@ iframe.virtualtour{
 
 
 
-
+.slider .boom{min-width:85vw !important; border:0px solid red !important;}
 
 
 @media(min-width:48em) {
