@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactPlayer from 'react-player/lazy';
 import { TfiYoutube } from "react-icons/tfi";
-import { FaTwitch, FaFacebookSquare } from "react-icons/fa";
+import { FaTwitch, FaFacebookSquare, FaVimeo, FaDailymotion } from "react-icons/fa";
+import { ImSoundcloud2 } from "react-icons/im";
 import useSiteMetadata from "../hooks/SiteMetadata";
 import PageMenu from "../components/PageMenu";
 
@@ -387,8 +388,7 @@ const handleAutoplayChange = (event) => {
               <div id="piratevideo" className='player-wrapper' style={{ display: 'grid', placeContent: '', height:'auto',  width: '100vw', transition: 'all .4s ease-in-out' }}>
 
 
-
-            {showPro ? (
+              {showPro && isRunningStandalone() ? (
 
 <div className="font" style={{ position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', transition: 'all .4s ease-in-out', marginTop: showNav ? '0' : '0',
 //  height: hideEditor ? '0' : '50px', 
@@ -668,7 +668,7 @@ const handleAutoplayChange = (event) => {
 </div>
 
                             {isRunningStandalone() && (
-                            <div style={{position:'absolute', left:'0', top:'50vh', zIndex:'2', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'2vh', width:'55px',padding:'3px 10px', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'var(--theme-ui-colors-borderRadius)'}}>
+                            <div style={{position:'absolute', left:'0', top:'15vh', zIndex:'2', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'1.5vh', width:'55px',padding:'3px 10px', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'var(--theme-ui-colors-borderRadius)'}}>
                                     <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
                                         <TfiYoutube style={{ fontSize: '30px', opacity:'.8' }} />
                                     </a>
@@ -678,8 +678,23 @@ const handleAutoplayChange = (event) => {
                                     <a title="Open Twitch" aria-label="Open Twitch" href="https://www.twitch.tv/directory">
                                         <FaTwitch style={{ fontSize: '30px', opacity:'.8' }} />
                                     </a>
+                                    <a title="Open Sound CLoud" aria-label="Open Sound Cloud" href="https://soundcloud.com/discover">
+                                        <ImSoundcloud2 style={{ fontSize: '30px', opacity:'.8' }} />
+                                    </a>
+                                    <a title="Open Vimeo" aria-label="Open Vimeo" href="https://vimeo.com/watch">
+                                        <FaVimeo style={{ fontSize: '30px', opacity:'.8' }} />
+                                    </a>
+                                    <a title="Open Daily Motion" aria-label="Open Daily Motion" href="https://www.dailymotion.com/">
+                                        <FaDailymotion style={{ fontSize: '30px', opacity:'.8' }} />
+                                    </a>
+
+                                    
+                                    
+                                    
                                 </div>
                              )}
+
+                             
                         
                     
                     </form>
@@ -690,10 +705,10 @@ const handleAutoplayChange = (event) => {
 
 
                 
-    ) : (
+) : isRunningStandalone() ? (
 
 
-<div className="font public" style={{display: hideEditor ? 'none' : 'flex', position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '', transition: 'all .4s ease-in-out', 
+<div className="font public" style={{display: showPro ? 'flex' : 'flex', position: 'relative', zIndex: '3', top: '0', width: '100vw', margin: '0 auto', marginTop: showNav ? '0' : '', transition: 'all .4s ease-in-out', 
 // height: hideEditor ? '0' : '50px', 
 // background: 'var(--theme-ui-colors-headerColor)',
  }}>
@@ -761,11 +776,7 @@ background: 'var(--theme-ui-colors-headerColor)',
 
                     {isRunningStandalone() && (
                             <div style={{position:'absolute', left:'0', top:'50vh', zIndex:'2', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:'2vh', width:'55px',padding:'3px 10px', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'var(--theme-ui-colors-borderRadius)'}}>
-
-
-
-
-                                    <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
+                                <a title="Open YouTube" aria-label="Open YouTube" href="https://youtube.com">
                                         <TfiYoutube style={{ fontSize: '30px', opacity:'.8' }} />
                                     </a>
                                     <a title="Open Facebook" aria-label="Open Facebook" href="https://www.facebook.com/watch/">
@@ -774,11 +785,23 @@ background: 'var(--theme-ui-colors-headerColor)',
                                     <a title="Open Twitch" aria-label="Open Twitch" href="https://www.twitch.tv/directory">
                                         <FaTwitch style={{ fontSize: '30px', opacity:'.8' }} />
                                     </a>
+                                    <a title="Open Sound CLoud" aria-label="Open Sound Cloud" href="https://soundcloud.com/discover">
+                                        <ImSoundcloud2 style={{ fontSize: '30px', opacity:'.8' }} />
+                                    </a>
+                                    <a title="Open Vimeo" aria-label="Open Vimeo" href="https://vimeo.com/watch">
+                                        <FaVimeo style={{ fontSize: '30px', opacity:'.8' }} />
+                                    </a>
+                                    <a title="Open Daily Motion" aria-label="Open Daily Motion" href="https://www.dailymotion.com/">
+                                        <FaDailymotion style={{ fontSize: '30px', opacity:'.8' }} />
+                                    </a>
                                 </div>
                              )}
 
                     </div>
-    )}
+) : (
+""
+      
+      )}
 
 
 
