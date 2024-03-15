@@ -599,6 +599,12 @@ const [playingIndex, setPlayingIndex] = useState(null);
                     />
               )}
 
+<div style={{ display:'block', minWidth:'40px', position: '', right: '', top: '', textAlign: 'center', fontSize: '9px', color: 'var(--theme-ui-colors-headerColorText)', borderRadius: 'var(--theme-ui-colors-borderRadius)', }}>
+                {filteredPosts.length} <br />
+                {dicResults}{filteredPosts.length !== 1 && 's'}
+              </div>
+
+              
               <button
                 id="clearbutton"
                 type="reset"
@@ -625,10 +631,7 @@ const [playingIndex, setPlayingIndex] = useState(null);
                 {dicClear}
               </button>
 
-              <div style={{ display:'block', minWidth:'40px', position: '', right: '', top: '', textAlign: 'center', fontSize: '9px', color: 'var(--theme-ui-colors-headerColorText)', borderRadius: 'var(--theme-ui-colors-borderRadius)', }}>
-                {filteredPosts.length} <br />
-                {dicResults}{filteredPosts.length !== 1 && 's'}
-              </div>
+              
             </div>
           </div>
         </>
