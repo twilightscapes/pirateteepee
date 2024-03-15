@@ -726,7 +726,7 @@ to{opacity:0;z-index:-3}
 .introspace{padding-top:60vh}
 .mobile{border:0 solid #ad04a5;display:none}
 
-.controls{animation:fade1;animation-delay:5s;animation-duration:1s;animation-fill-mode:forwards;background:rgba(0,0,0,.9);border:1px solid #666;border-radius:var(--theme-ui-colors-borderRadius);color:#999;cursor:pointer;display:grid;font-size:1rem;font-weight:700;height:40px;opacity:1;padding:2px;place-content:center;position:relative;width:40px}
+.controls{animation:fade1;animation-delay:5s;animation-duration:1s;animation-fill-mode:forwards;background:rgba(0,0,0,.7);border:1px solid #666;border-radius:var(--theme-ui-colors-borderRadius);color:#999;cursor:pointer;display:grid;font-size:1rem;font-weight:700;height:40px;opacity:1;padding:2px;place-content:center;position:relative;width:40px}
 .controls,.controls svg{height:40px;width:40px}
 
 .controlsbox{display:flex;gap:20px;justify-content:center;position:absolute;top:0; z-index: 1;}
@@ -1035,6 +1035,7 @@ body.contactpage .ReactModal__Content{padding-top:10vh !important;}
 
 
 
+
   /* .grid-container {margin:0 auto 0 auto ; padding-top:16vh; } */
   /* body.homepage .grid-container {margin-top:0 ; padding-top:14vh !important;} */
 
@@ -1150,34 +1151,26 @@ iframe.virtualtour{
 .fullscreenButt{display:none}
 .has-app{display:block}
 }
-@media(max-width:48rem) {
 
+
+@media(max-width:48rem) {
 /* .grid-container {margin:0 auto 0 auto ; margin-top:0; } */
 .grid-container {margin-top:0; padding-top:16vh !important;}
-
-
 .slider{margin:16vh auto 0 auto !important;}
-
-
-
 .slider .loadmore{height:40vh}
-
 .magicisland {margin-top:10vh;}
 .cattags {max-width:450px !important;}
-
 #resume span{display:flex;flex-direction:column;gap:20px;position:-webkit-sticky;position:sticky;top:0}
 #resume span div{display:block;width:100%}
 .nameblock{background:transparent;color:inherit;}
 #gobacker{position:fixed; top:70vh ; right:1vw; z-index:11;}
-
-
-
-
 }
 
 
 
-.slider .boom{min-width:85vw !important; border:0px solid red !important;}
+.slider .boom{min-width:85vw !important; border:1px solid red !important;}
+
+
 
 
 @media(min-width:48em) {

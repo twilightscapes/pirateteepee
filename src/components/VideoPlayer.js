@@ -320,18 +320,13 @@ const updateQueryString = (values) => {
     
 
 
-    // // Function to handle hide editor change
-    // const handleHideEditorChange = (event) => {
-    //     const newValue = event.target.checked;
-    //     setHideEditor(newValue);
-    //     updateQueryString({ hideEditor: newValue ? 'true' : 'false' });
-    // };
 
-    const handleHideEditorChange = (event) => {
-        const newValue = event.target.checked; // Use the checked value directly
-        setHideEditor(!newValue); // Invert the value for state update
-        updateQueryString({ hideEditor: newValue ? 'false' : 'true' }); // Update query string accordingly
-    };
+// needed for showEditor
+    // const handleHideEditorChange = (event) => {
+    //     const newValue = event.target.checked; // Use the checked value directly
+    //     setHideEditor(!newValue); // Invert the value for state update
+    //     updateQueryString({ hideEditor: newValue ? 'false' : 'true' }); // Update query string accordingly
+    // };
     
 
     // Function to handle show blocker change
@@ -401,7 +396,7 @@ const handleAutoplayChange = (event) => {
  }}>
 
                 <form 
-      className="youtubeform1 frontdrop1" 
+      className="youtubeform1 frontdrop1 panel" 
       onSubmit={handleSubmit}  
       id="youtubeform" 
       name="youtubeform" 
@@ -415,8 +410,8 @@ const handleAutoplayChange = (event) => {
         padding: '4px 20px',
         width: '100%',
         // transform: hideEditor ? 'translateY(-100%)' : 'none',
-        transition: 'transform 0.5s ease-in-out',
-        background: 'var(--theme-ui-colors-headerColor)',
+        transition: 'transform 0.4s ease-in-out',
+        // background: 'var(--theme-ui-colors-headerColor)',
         // color:'--theme-ui-colors-headerColorText'
         
         // height: hideEditor ? '0' : 'auto'
@@ -433,11 +428,11 @@ const handleAutoplayChange = (event) => {
   gap: '2vw',
   alignItems: 'center',
   width: '', 
-  transition: 'opacity .5s ease-in-out',
-  opacity: isVideoActive ? 1 : 0.7 
+  transition: 'opacity .4s ease-in-out',
+  opacity: isVideoActive ? 1 : 0.5 
 }}>
 
-<div id="checkboxes" style={{ display: 'flex', flexDirection:'row', gap: '5px', alignItems: 'center', padding:'0 5px 5px 10px', justifyContent:'center', background:'rgba(0,0,0,.1)', outline:'1px solid #777', borderRadius:'var(--theme-ui-colors-borderRadius)', fontSize:'clamp(.5rem,1.2vw,1rem)'  }}>
+<div id="checkboxes" style={{ display: 'flex', flexDirection:'row', gap: '5px', alignItems: 'center', padding:'0 5px 5px 10px', justifyContent:'center', background:'rgba(0,0,0,.1)', outline:'0px solid #777', borderRadius:'var(--theme-ui-colors-borderRadius)', fontSize:'clamp(.5rem,1.2vw,1rem)'  }}>
 
 <label title="AutoPlay - Set video to automatically begin playing. NOTE: videos must be muted for autoplay to work" htmlFor="autoplayCheckbox" style={{textAlign:'center', fontSize:'80%', display:'flex', flexDirection:'column', alignItems:'center', opacity: isVideoActive ? 1 : 0.5 }}>Autoplay:
     <input
@@ -493,7 +488,7 @@ const handleAutoplayChange = (event) => {
                                     />
                                 </label>
 
-<label htmlFor="hide-editor-checkbox" style={{textAlign:'center', fontSize:'85%', display:'flex', flexDirection:'column', alignItems:'center', opacity: isVideoActive ? 1 : 0.5}}>Editor:
+{/* <label htmlFor="hide-editor-checkbox" style={{textAlign:'center', fontSize:'85%', display:'flex', flexDirection:'column', alignItems:'center', opacity: isVideoActive ? 1 : 0.5}}>Editor:
 <input
     type="checkbox"
     id="hide-editor-checkbox"
@@ -503,7 +498,7 @@ const handleAutoplayChange = (event) => {
     onChange={handleHideEditorChange}
     checked={!hideEditor} // Invert the state here
 />
-</label>
+</label> */}
                 
 
 {/* <div style={{ display: 'flex', flexDirection:'row', gap: '10px', alignItems: 'center', padding:'0 3px 5px 3px', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'5px' }}> */}
@@ -530,7 +525,7 @@ const handleAutoplayChange = (event) => {
                 top: expanded ? '60px' : 'inherit',
                 left: expanded ? 'auto' : 'auto',
                 border: expanded ? '2px solid var(--theme-ui-colors-siteColor)' : 'inherit',
-                transition: 'opacity 1s ease-in-out',
+                transition: 'opacity .4s ease-in-out',
             }}
             aria-label="Enter Video Title"
             className={`youtubelinker${expanded ? ' expanded' : ''}`}
@@ -646,14 +641,14 @@ const handleAutoplayChange = (event) => {
                                 title="Paste Video Link"
                                 value={youtubelink}
                                 onChange={handleInputChange}
-                                style={{ padding: '.5vh .2vw', minWidth:'75px', width: '100%', maxWidth: '500px', textAlign:'center', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', background:'rgba(0,0,0,.2)', outline:'1px solid #999', border:'1px solid var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColor)' }}
+                                style={{ padding: '.5vh .2vw', minWidth:'75px', width: '100%', maxWidth: '500px', textAlign:'center', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', background:'rgba(0,0,0,.2)', outline:'0px solid #999', border:'1px solid var(--theme-ui-colors-siteColor)', color:'var(--theme-ui-colors-siteColor)' }}
                                 placeholder="Paste Link"
                                 className="youtubelinker"
                                 aria-label="Paste Link To Video"
                             />
 
 
-<div style={{display: 'flex', flexDirection:'row', gap: '10px', alignItems: 'center', padding:'3px 10px', background:'rgba(0,0,0,.2)', outline:'1px solid #333', borderRadius:'var(--theme-ui-colors-borderRadius)', opacity: isVideoActive ? 1 : 0.5}}>
+<div style={{display: 'flex', flexDirection:'row', gap: '10px', alignItems: 'center', padding:'3px 10px', background:'rgba(0,0,0,.1)', outline:'0px solid #333', borderRadius:'var(--theme-ui-colors-borderRadius)', opacity: isVideoActive ? 1 : 0.7}}>
     
 <button aria-label="Create Link" onClick={handleCopyAndShareButtonClick} disabled={!isVideoActive} style={{ display: "flex", gap: '.5vw', justifyContent: "center", padding: ".6vh .5vw", width:'100%', minWidth:'60px', maxHeight: "", margin: "0 auto", textAlign: 'center', fontSize: '14px', fontWeight: 'light', textShadow: '0 1px 0 #444', marginLeft:'', }} className="button font print">
 {copied ? 'Link Copied' : 'Copy Link'}
@@ -718,7 +713,7 @@ margin: '0 auto',
 gap: '2vw',
 padding: '1vh 2vw',
 // transform: hideEditor ? 'translateY(-100%)' : 'none',
-transition: 'transform 0.2s ease-in-out',
+transition: 'transform 0.4s ease-in-out',
 background: 'var(--theme-ui-colors-headerColor)',
 // height: hideEditor ? 'auto' : '0'
 
@@ -738,7 +733,7 @@ background: 'var(--theme-ui-colors-headerColor)',
                                 title="Paste Video Link"
                                 value={youtubelink}
                                 onChange={handleInputChange}
-                                style={{ padding: '.5vh .4vw', minWidth:'85px', width: '100%', maxWidth: '400px', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', outline:'1px solid #999', border:'1px solid var(--theme-ui-colors-siteColor)' }}
+                                style={{ padding: '.5vh .4vw', minWidth:'85px', width: '100%', maxWidth: '400px', fontSize: 'clamp(.6rem,1vw,1rem)', transition: 'all .4s ease-in-out', outline:'0px solid #999', border:'1px solid var(--theme-ui-colors-siteColor)' }}
                                 placeholder="Paste Video Link"
                                 className="youtubelinker"
                                 aria-label="Paste Link To Video"
