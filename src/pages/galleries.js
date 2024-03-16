@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Seo from "../components/seo";
 import Layout from "../components/siteLayout";
 import SearchPosts from "../components/galleryIndex";
-
+import { Helmet } from "react-helmet";
 const GalleryPage = () => {
   // Check if localStorage is available
   const isLocalStorageAvailable = typeof window !== "undefined" && window.localStorage;
@@ -36,12 +36,13 @@ const GalleryPage = () => {
   }, [isLocalStorageAvailable]);
 
   return (
-    <Layout className="search">
-      <Seo title="Search" />
-
+    <Layout className="gallery">
+      <Seo title="Gallery" />
+      <Helmet>
+        <body className="gallery" />
+      </Helmet>
+      
       <div className="scroll-area" id="posttop" name="posttop" style={{minHeight:'100dvh', width:'100vw'}}>
-        
-        {/* Pass isSliderVisible as a prop to BlogPosts */}
         <SearchPosts isSliderVisible={isSliderVisible} />
       </div>
     </Layout>

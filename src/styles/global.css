@@ -31,7 +31,8 @@ body.install #menu, body.install #gobacker, body.install .spacer  {display:none 
 
 /* .effects{position: relative; z-index: 1;} */
 
-
+body.gallery .slider {margin-top:0; padding-top:0;}
+body.gallery .grid-container {margin-top:100px; padding-top:0;}
 
 ::-webkit-scrollbar,::-webkit-scrollbar-button{height:1px;width:1px}
 
