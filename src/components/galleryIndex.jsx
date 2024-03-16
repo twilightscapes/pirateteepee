@@ -149,7 +149,63 @@ const GalleryIndex = ({ isSliderVisible }) => {
 };
 
 const options = {
-  // Options for SimpleReactLightbox
+  settings: {
+    autoplaySpeed: 4000,
+    boxShadow: "0px 0px 20px #000",
+    disableKeyboardControls: false,
+    disablePanzoom: false,
+    disableWheelControls: true,
+    hideControlsAfter: false,
+    lightboxTransitionSpeed: 0.3,
+    lightboxTransitionTimingFunction: "linear",
+    overlayColor: "rgba(0, 0, 0, 0.8)",
+    slideAnimationType: "slide",
+    slideSpringValues: [300, 50],
+    slideTransitionSpeed: 0.6,
+    slideTransitionTimingFunction: "linear",
+    usingPreact: false,
+  },
+  buttons: {
+    backgroundColor: "#FA02B7",
+    iconColor: "rgba(255, 255, 255, 0.8)",
+    iconPadding: "10px",
+    showAutoplayButton: false,
+    showCloseButton: true,
+    showDownloadButton: false,
+    showFullscreenButton: false,
+    showNextButton: false,
+    showPrevButton: false,
+    showThumbnailsButton: false,
+    size: "40px",
+  },
+  caption: {
+    captionAlignment: "start",
+    captionColor: "#FFFFFF",
+    captionContainerPadding: "20px 12% 30px 12%",
+    captionFontFamily: "inherit",
+    captionFontSize: "inherit",
+    captionFontStyle: "inherit",
+    captionFontWeight: "inherit",
+    captionTextTransform: "inherit",
+    showCaption: false,
+  },
+  thumbnails: {
+    showThumbnails: false,
+    thumbnailsAlignment: "center",
+    thumbnailsContainerBackgroundColor: "#111",
+    thumbnailsContainerPadding: "0",
+    thumbnailsGap: "0 2px",
+    thumbnailsIconColor: "#ffffff",
+    thumbnailsOpacity: 0.4,
+    thumbnailsPosition: "bottom",
+    thumbnailsSize: ["100px", "80px"],
+  },
+  progressBar: {
+    backgroundColor: "#000",
+    fillColor: "#333",
+    height: "3px",
+    showProgressBar: true,
+  },
 };
 
 export default GalleryIndex;
