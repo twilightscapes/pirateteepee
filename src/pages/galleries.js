@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Seo from "../../components/seo";
-import Layout from "../../components/siteLayout";
-import SearchPosts from "../../components/SearchPosts";
+import Seo from "../components/seo";
+import Layout from "../components/siteLayout";
+import SearchPosts from "../components/galleryIndex";
 
-const Search = () => {
+const GalleryPage = () => {
   // Check if localStorage is available
   const isLocalStorageAvailable = typeof window !== "undefined" && window.localStorage;
 
@@ -39,7 +39,8 @@ const Search = () => {
     <Layout className="search">
       <Seo title="Search" />
 
-      <div className="post-container" id="posttop">
+      <div className="scroll-area" id="posttop" name="posttop" style={{minHeight:'100dvh', width:'100vw'}}>
+        
         {/* Pass isSliderVisible as a prop to BlogPosts */}
         <SearchPosts isSliderVisible={isSliderVisible} />
       </div>
@@ -47,4 +48,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default GalleryPage;

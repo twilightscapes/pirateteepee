@@ -821,6 +821,8 @@ body.blogpost #menu li .fullscreenButt{display:flex}
   background:linear-gradient(180deg, #121113 1%, #0a0a0b 80%);
 }
 
+.galleryimage img{ cursor: pointer;}
+
 .horizontal-scroll .post-card1 .inline{
   position:relative !important;
   border: none !important;
