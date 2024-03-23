@@ -293,7 +293,11 @@ collections:
                 max: 51
                 step: 2
                 hint: "Max #50"
-
+              - widget: "string"
+                label: "Default Photo Collection"
+                name: "defaultCollection"
+                hint: "This sets the gallery that shows by default on the photo page"
+                required: false
 
 
 
