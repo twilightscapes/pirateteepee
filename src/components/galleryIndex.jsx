@@ -6,12 +6,12 @@ import useSiteMetadata from "../hooks/SiteMetadata";
 const GalleryIndex = ({ isSliderVisible }) => {
 
   const { featureOptions, language  } = useSiteMetadata();
-  const { showTitles } = featureOptions
+  const { showTitles, defaultCollection } = featureOptions
   const { dicGallery } = language;
 
 
 
-  const [selectedDirectory, setSelectedDirectory] = useState("Favorites"); // Set the default
+  const [selectedDirectory, setSelectedDirectory] = useState(defaultCollection); 
   const [sliderVisible, setSliderVisible] = useState(false);
   const scrollRef = useRef(null);
   const data = useStaticQuery(graphql`
