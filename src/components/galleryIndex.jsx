@@ -16,7 +16,10 @@ const GalleryIndex = ({ isSliderVisible }) => {
   const scrollRef = useRef(null);
   const data = useStaticQuery(graphql`
   query {
-    allDirectory(filter: { sourceInstanceName: { eq: "assets" } }) {
+    allDirectory(
+      filter: { sourceInstanceName: { eq: "assets" } }
+      sort: { fields: name, order: ASC }
+    ) {
       nodes {
         name
       }
@@ -45,9 +48,7 @@ const GalleryIndex = ({ isSliderVisible }) => {
       }
     }
   }
-  
-  
-  `);
+`);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
