@@ -11,7 +11,7 @@ const GalleryIndex = ({ isSliderVisible }) => {
 
 
 
-  const [selectedDirectory, setSelectedDirectory] = useState("favorites"); // Set the default
+  const [selectedDirectory, setSelectedDirectory] = useState("Favorites"); // Set the default
   const [sliderVisible, setSliderVisible] = useState(false);
   const scrollRef = useRef(null);
   const data = useStaticQuery(graphql`
