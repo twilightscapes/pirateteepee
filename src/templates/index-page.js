@@ -579,7 +579,7 @@ style={{height:'auto', width:'100dvw', maxHeight:'100dvh', position:'relative', 
   fontSize:'clamp(1rem, 1.4vw, 3.2rem)',
   background:'rgba(0,0,0,0.50)',
   backdropFilter:'blur(8px)',
-  border:'10px double var(--theme-ui-colors-buttonHoverBg)', borderRadius:'var(--theme-ui-colors-borderRadius)',
+  border:'0px double var(--theme-ui-colors-buttonHoverBg)', borderRadius:'var(--theme-ui-colors-borderRadius)',
   textShadow:'0 2px 0px #000',
   maxWidth:'70%'
 }}>
