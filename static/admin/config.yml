@@ -298,6 +298,11 @@ collections:
                 name: "defaultCollection"
                 hint: "This sets the gallery that shows by default on the photo page"
                 required: false
+              - widget: "boolean"
+                label: "Show Photo Titles"
+                name: "showCollectionTitles"
+                hint: "hide/show Titles on the photo page"
+                required: false
 
 
 
