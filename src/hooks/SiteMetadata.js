@@ -16,6 +16,7 @@ const useSiteMetadata = () => {
           companyname
           postcount
           homecount
+          defaultCollection
 
           featureOptions{
             showfooter
@@ -29,7 +30,6 @@ const useSiteMetadata = () => {
             showVideoPlayer
             showHomePosts
             showProfile
-            defaultCollection
           }
 
           proOptions{

@@ -12,6 +12,7 @@
     "image": "/assets/pirate-logo.svg",
     "description": "Pirate Social media for the people by the people",
     "icon512": "/assets/pirate-icon.svg",
+    "defaultCollection": "",
     "navOptions": {
       "showNav": true,
       "showNav2": false,
@@ -28,8 +29,7 @@
       "showHomePosts": true,
       "showProfile": false,
       "showDefault": true,
-      "showSwipe": true,
-      "defaultCollection": "Favorites"
+      "showSwipe": true
     },
     "proOptions": {
       "showModals": true,
