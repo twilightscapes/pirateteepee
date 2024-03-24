@@ -2,6 +2,7 @@
 profileName: BECOME A PIRATE!
 profileSocial: false
 addressText: The Fleet Launches Soon!
+date: 2023-10-01 09:00
 youtube: 
  youtuber: ""
  youtuber2: ""
@@ -29,7 +30,7 @@ showZoom: false
 showPostContact: false
 profText: 
 tagline: You're the Captain of your content!
-featuredImage: /assets/losser.webp
+featuredImage: /assets/pirate-propaganda.webp
 secondaryImage: /assets/default-user.webp
 scrollable: false
 portfolio:

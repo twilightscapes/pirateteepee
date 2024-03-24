@@ -6,7 +6,7 @@
 
 # PIRATE
 
-A new distributed social media with your own complete website/App platform with multimedia blog and customizable resume, cover letter and skills and notes pages with integrated contact forms.
+A new distributed social media with your own complete website/App platform with multimedia blog and photo galleries, video pages with integrated contact forms.
 
 PIRATE is built to OPERATE FOR FREE using FREE Cloud Based Services
 
@@ -18,9 +18,9 @@ PIRATE is built to OPERATE FOR FREE using FREE Cloud Based Services
 - User-installable PWA (Progressive Web Apps)
 - Responsive Web Design
 - Dark / Light Mode
-- Customize Resume, Profile, Cover Letter, Skills, Interview Notes and Contact page.
+- Customize Resume, Profile, Contact page.
 - Add / Modify / Delete posts - no limitations.
-- Edit website settings, Add Google Analytics, seo settings, logos, etc all from  within the CMS.
+- Edit website settings, seo settings, logos, etc all from  within the CMS.
 - SEO Optimized (Scores 100 on PageSpeed)
 - Social media icons
 - OpenGraph structured data
@@ -44,14 +44,14 @@ You can select any existing post or page to start editing or add a **New Post**.
 
 ## ⚙ Customizing Site details
 
-You can find all the website settings such website Site title, Website URL, Google anlaytics etc,.. in your Netlify CMS `Admin > Settings > General`
+You can find all the website settings such website Site title, Website URL etc,.. in your Netlify CMS `Admin > Settings > General`
 
 
 ## 🙏 Thank you
 
 We really appreciate you choosing to become a PIRATE!
 
-[PIRATE]: https://PIRATEpro.app
+[PIRATE]: https://pirateweb.org
 [gatsby]: https://gatsbyjs.org
 [decapcms]: https://www.decapcms.org
-[custom-domain]: https:/PIRATEpro.app/adding-custom-domain-netlify
+
