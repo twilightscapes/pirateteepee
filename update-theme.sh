@@ -34,6 +34,7 @@ cp tmp_theme/package.json .
 # Clean up
 rm -rf tmp_theme
 
+
 echo "Theme updated successfully!"
 
 
