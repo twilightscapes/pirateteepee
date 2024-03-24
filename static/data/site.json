@@ -1,14 +1,14 @@
 {
   "meta": {
     "iconimage": "",
-    "companyname": "Pirate",
-    "siteUrl": "https://piratesocial.org",
-    "twitterUsername": "toddlambert",
-    "titleDefault": "PIRATE",
+    "companyname": "Your Name",
+    "siteUrl": "https://pirateweb.org",
+    "twitterUsername": "yourtwitterhandle",
+    "titleDefault": "Default Site Title",
     "postcount": 9,
     "homecount": 3,
     "titleTemplate": "%s",
-    "title": "PIRATE SOCIAL",
+    "title": "Your site motto",
     "image": "/assets/pirate-logo.svg",
     "description": "Pirate Social media for the people by the people",
     "icon512": "/assets/pirate-icon.svg",
@@ -20,17 +20,17 @@
       "showFooterMenu": false
     },
     "featureOptions": {
-      "showArchive": true,
-      "showSearch": true,
+      "showArchive": false,
+      "showSearch": false,
       "showDates": true,
       "showTitles": true,
       "showfooter": false,
       "showSocial": false,
       "showVideoPlayer": false,
-      "showHomePosts": true,
-      "showProfile": false,
+      "showHomePosts": false,
+      "showProfile": true,
       "showDefault": true,
-      "showSwipe": true
+      "showSwipe": false
     },
     "proOptions": {
       "showModals": true,
@@ -44,13 +44,13 @@
       "showResume": false,
       "showLocation": false,
       "showPopup": false,
-      "showPWA": true
+      "showPWA": false
     },
     "magicOptions": {
       "showMagic": false,
       "showMagicCat": true,
       "showMagicTag": true,
-      "showMagicSearch": false
+      "showMagicSearch": true
     },
     "language": {
       "dicLoadMore": "Load More",

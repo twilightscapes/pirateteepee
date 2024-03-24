@@ -1,11 +1,11 @@
 ---
-profileName: BECOME A PIRATE!
+profileName: Your Profile Name
 profileSocial: false
-addressText: The Fleet Launches Soon!
+addressText: This is your profile
 date: 2023-10-01 09:00
 youtube: 
  youtuber: ""
- youtuber2: ""
+ youtuber2: https://youtu.be/rdB13lFexNk?si=Q3XoBTwNpWsnnDEm
  youtubeshoworiginal: false
  youtubersuggestion1: "null"
  youtubersuggestion2: "null"
@@ -20,7 +20,7 @@ youtube:
  showVidOnly: false
  customcontrols: false
  audioend: "0"
- audiotitle: "null"
+ audiotitle: "Pirate Music"
  audiostart: "0"
  contentinvideo: false
  liarliar: false
@@ -29,8 +29,9 @@ showPageNav: false
 showZoom: false
 showPostContact: false
 profText: 
-tagline: You're the Captain of your content!
-featuredImage: /assets/pirate-propaganda.webp
+profTitle: Welcome to Pirate
+tagline: Check Your Email For An Invitation
+featuredImage: /assets/default-og-image.webp
 secondaryImage: /assets/default-user.webp
 scrollable: false
 portfolio:
@@ -44,27 +45,26 @@ skillsText:
 underlayImage: /assets/transparent.png
 bumpertext: x
 cta:
-  ctaText: Reserve Your Galleon
-  ctaLink: /contact
+  ctaText: Your Call To Action
+  ctaLink: /thanks
   showCTA: false
 homecount: 5
-addressText2: ""
+addressText2: You can change this in your settings 
 pagePW: ""
 skillsTitle: ""
 svgImage: /assets/transparent.png
 template: index-page
-title: Social media by the people for the people
+title: Home Page Title
 postLimit: "4"
 description: PIRATE - social media for the people by the people
 svgzindex: x
 coverletter:
-  coverText: About PIRATE
+  coverText: About Me
   coverLink: /contact
   showCover: false
 sharethis: false
-profTitle: Hoist Your Flag!
 tags: 
- - manic
+ - default
 category:
  - ""
 mediawarnings:
@@ -84,11 +84,7 @@ comments: false
 shareable: false
 externalLink: https://piratesocial.org
 ---
-Pirate is your own <strong>Personal Web App(PWA)</strong>, 
-It works on any device, even your TV - NO App Store needed.
+The email you used to sign up, should have received an invitation to join your new site. Upon accepting the invitation you will be able to set your password and login to the Pirate CMS.
 
-Watch ad-free video, edit your homepage/profile, and publish content with FULL ownership and copyright.
+Once logged in, you can go to site settings and make posts appear here instead, or the Pirate Video interface. You can also configure navigation, colors, font, etc...
 
-A new social media, Pirate is a decentralized network of other Pirate users &amp; YOU control the algorithm.
-
-Using open-source platforms, Pirate operates forever, with no contracts, commitments or costs of any kind.
