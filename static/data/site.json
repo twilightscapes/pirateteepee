@@ -9,7 +9,7 @@
     "homecount": 3,
     "titleTemplate": "%s",
     "title": "Your site motto",
-    "image": "/assets/pirate-logo.svg",
+    "image": "",
     "description": "Pirate Social media for the people by the people",
     "icon512": "/assets/pirate-icon.svg",
     "defaultCollection": "",
