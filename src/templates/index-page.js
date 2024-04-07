@@ -7,7 +7,8 @@ import HomePosts from "../components/HomePosts";
 import Seo from "../components/seo";
 // import { getSrc } from "gatsby-plugin-image";
 import useSiteMetadata from "../hooks/SiteMetadata";
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getSrc } from "gatsby-plugin-image"
+
 import Social from "../components/social"
 // import PropTypes from "prop-types";
 
@@ -59,11 +60,14 @@ const HomePage = ({ data, location }) => {
   
   
     return (
+
+
 <Seo
   title={seoTitleParam || frontmatter.title}
   description={frontmatter.description || excerpt}
-  image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : `${siteUrl}/assets/default-og-image.webp`)}
+  image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : (frontmatter.featuredImage ? getSrc(frontmatter.featuredImage) : `${siteUrl}/assets/default-og-image.webp`))}
 />
+
 
     );
   };
