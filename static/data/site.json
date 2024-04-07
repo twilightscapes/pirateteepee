@@ -26,7 +26,7 @@
       "showTitles": true,
       "showfooter": false,
       "showSocial": false,
-      "showVideoPlayer": false,
+      "showVideoPlayer": true,
       "showHomePosts": false,
       "showProfile": true,
       "showDefault": true,

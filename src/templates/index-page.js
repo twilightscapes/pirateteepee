@@ -5,7 +5,7 @@ import Layout from "../components/siteLayout";
 import { Helmet } from "react-helmet";
 import HomePosts from "../components/HomePosts";
 import Seo from "../components/seo";
-import { getSrc } from "gatsby-plugin-image";
+// import { getSrc } from "gatsby-plugin-image";
 import useSiteMetadata from "../hooks/SiteMetadata";
 import { GatsbyImage } from "gatsby-plugin-image"
 import Social from "../components/social"
@@ -23,7 +23,49 @@ import { ImPlay } from "react-icons/im"
 // import { IoShareOutline } from 'react-icons/io5';
 import { AiOutlineAudioMuted } from 'react-icons/ai';
 // import { StaticImage } from "gatsby-plugin-image"
+
+
+
+
+
+
+
+
+
 const HomePage = ({ data, location }) => {
+
+  const SeoWrapper = ({ location }) => {
+    const queryParams = new URLSearchParams(location.search);
+    const videoUrlParam = queryParams.get('video');
+    const seoTitleParam = queryParams.get('seoTitle') || "☠ Pirate Video | Play ▶ ";
+    const customImageParam = queryParams.get('customImage'); 
+  
+    // Function to extract video ID from YouTube URL
+    const extractVideoId = (url) => {
+      if (!url) {
+        return null;
+      }
+      /* eslint-disable no-useless-escape */
+      const regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+      const match = url.match(regExp);
+      const videoId = match ? match[1] : null;
+      return videoId;
+      /* eslint-disable no-useless-escape */
+    };
+  
+    // Extract video ID
+    const videoId = extractVideoId(videoUrlParam);
+  
+  
+  
+    return (
+      <Seo
+        title={seoTitleParam || frontmatter.title }
+        description={frontmatter.description ? frontmatter.description : excerpt}
+        image={customImageParam || (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : 'https://pirateyoutube.com/assets/default-og-image.webp')}
+      />
+    );
+  };
 
   const { language, proOptions, featureOptions  } = useSiteMetadata();
 
@@ -433,14 +475,14 @@ display:'flex', justifyContent:'center', maxHeight:'80px !important', height:'15
         <body id="body" className="homepage" />
       </Helmet>
 
-      <Seo
+      {/* <Seo
         title={frontmatter.title}
         description={frontmatter.description ? frontmatter.description : excerpt}
         image={frontmatter.featuredImage ? getSrc(frontmatter.featuredImage) : null}
-      />
+      /> */}
 
 
-
+<SeoWrapper location={location} />
 
 <div className="post-container" style={{maxWidth:'100vw', overFlowY:'hidden', paddingTop: showNav ? '60px' : '',}}>
 
