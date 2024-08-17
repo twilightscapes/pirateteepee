@@ -12,7 +12,6 @@
     "url": "https://github.com/issues"
   },
   "scripts": {
-    "update-theme": "./update-theme.sh",
     "build": "npm run update-theme && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
